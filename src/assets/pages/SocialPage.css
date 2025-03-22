@@ -1,0 +1,202 @@
+body, html{
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #f8b0d1, #b2d8e1);
+    transition: background 0.5s ease;
+}
+
+.social-page {
+    font-family: 'Arial', sans-serif;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  .container {
+    max-width: 900px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 60px 40px;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+  
+  .intro-section {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .intro-section h1 {
+    font-size: 2.1rem;
+    font-family: 'Boldonse', sans-serif;
+    color: #5a1467;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .intro-section p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    padding: 0 70px;
+  }
+  
+  .event-options {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .event-card {
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+    color: #fff;
+    width: 300px;
+    margin-bottom: 20px;
+  }
+  
+  .event-card h2 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  
+  .event-card p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .event-btn {
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .event-btn:hover {
+    background-color: #ff4e3a;
+    transform: scale(1.05);
+  }
+  
+  .event-card.online {
+    background: linear-gradient(135deg, #ff9a9e, #fecfef);
+  }
+  
+  .event-card.in-person {
+    background: linear-gradient(135deg, #fceabb, #f8b500);
+  }
+  
+  .explore-events {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .explore-events h2 {
+    font-size: 2rem;
+    color: #5a1467;
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin-top: -20px;
+  }
+  
+  .explore-btn {
+    background: linear-gradient(45deg, #9b59b6, #3498db);
+    color: white;
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: inline-block;
+    transform: scale(1);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  
+  .explore-btn:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, #ff8e53, #ff6f61);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    color: #fff;
+  }
+  
+  .explore-btn:focus {
+    outline: none;
+    border: 2px solid #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  }
+  
+  .explore-btn:active {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #ff8e53, #ff6f61);
+  }
+  .image-section {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .image-section img {
+    width: 70%;
+    max-width: 700px;
+    border-radius: 15px;
+    margin-top: -30px;
+    transition: transform 0.3s ease;
+  }
+  
+  .image-section img:hover {
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 768px) {
+    .intro-section h1 {
+      font-size: 2.2rem;
+    }
+  
+    .intro-section p {
+      font-size: 1rem;
+    }
+  
+    .event-options {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .event-card {
+      padding: 20px;
+      width: 90%;
+    }
+  
+    .explore-btn {
+      font-size: 1.1rem;
+    }
+  }
+  

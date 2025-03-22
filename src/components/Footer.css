@@ -1,0 +1,63 @@
+/* General Footer Styling */
+.footer {
+  background-color: transparent;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    max-height: 140px;
+    position: relative;
+    bottom: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif; /* Ensures padding does not affect width */
+  }
+  
+  /* Footer Content Styling */
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Footer Links Styling */
+  .footer-links {
+    margin-top: 10px;
+  }
+  
+  .footer-links a {
+    color: #2c0a32;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Styling for GitHub Logo */
+  #github-logo {
+    width: 60px;
+    height: auto;
+    margin-left: 10px;
+  }
+  
+  /* Make the footer responsive */
+  @media (max-width: 600px) {
+    .footer-content {
+      padding: 0 10px;
+    }
+  
+    .footer-links a {
+      font-size: 14px;
+    }
+  
+    #github-logo {
+      width: 25px;
+      height: 25px;
+    }
+  }
+  
