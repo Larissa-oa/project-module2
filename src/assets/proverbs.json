@@ -1,0 +1,512 @@
+[
+  {
+    "id": 1,
+    "proverb": "A journey of a thousand miles begins with a single step.",
+    "country": "China"
+  },
+  {
+    "id": 2,
+    "proverb": "Wisdom is like a baobab tree; no one individual can embrace it.",
+    "country": "Ghana"
+  },
+  {
+    "id": 3,
+    "proverb": "He who asks is a fool for five minutes, but he who does not ask remains a fool forever.",
+    "country": "Japan"
+  },
+  {
+    "id": 4,
+    "proverb": "Don’t count your chickens before they hatch.",
+    "country": "England"
+  },
+  {
+    "id": 5,
+    "proverb": "Even the best cooking pot will not produce food.",
+    "country": "Africa"
+  },
+  {
+    "id": 6,
+    "proverb": "Fall seven times, stand up eight.",
+    "country": "Japan"
+  },
+  {
+    "id": 7,
+    "proverb": "When the roots are deep, there is no reason to fear the wind.",
+    "country": "Africa"
+  },
+  {
+    "id": 8,
+    "proverb": "No matter how long the night, the day is sure to come.",
+    "country": "Nigeria"
+  },
+  {
+    "id": 9,
+    "proverb": "A man who uses force is afraid of reasoning.",
+    "country": "Kenya"
+  },
+  {
+    "id": 10,
+    "proverb": "A single bracelet does not jingle.",
+    "country": "Congo"
+  },
+  {
+    "id": 11,
+    "proverb": "If you want to go fast, go alone. If you want to go far, go together.",
+    "country": "Africa"
+  },
+  {
+    "id": 12,
+    "proverb": "The child who is not embraced by the village will burn it down to feel its warmth.",
+    "country": "Africa"
+  },
+  {
+    "id": 13,
+    "proverb": "Do not look where you fell, but where you slipped.",
+    "country": "Liberia"
+  },
+  {
+    "id": 14,
+    "proverb": "Even a clock that does not work is right twice a day.",
+    "country": "Poland"
+  },
+  {
+    "id": 15,
+    "proverb": "A bad workman always blames his tools.",
+    "country": "France"
+  },
+  {
+    "id": 16,
+    "proverb": "Empty vessels make the most noise.",
+    "country": "India"
+  },
+  {
+    "id": 17,
+    "proverb": "Talk doesn’t cook rice.",
+    "country": "China"
+  },
+  {
+    "id": 18,
+    "proverb": "It takes a whole village to raise a child.",
+    "country": "Nigeria"
+  },
+  {
+    "id": 19,
+    "proverb": "When one door closes, another opens.",
+    "country": "Spain"
+  },
+  {
+    "id": 20,
+    "proverb": "To run is not necessarily to arrive.",
+    "country": "Zambia"
+  },
+  {
+    "id": 21,
+    "proverb": "You can't wake a person who is pretending to be asleep.",
+    "country": "Navajo"
+  },
+  {
+    "id": 22,
+    "proverb": "Beware of little expenses; a small leak will sink a great ship.",
+    "country": "USA"
+  },
+  {
+    "id": 23,
+    "proverb": "A tiger does not proclaim its tigritude, it pounces.",
+    "country": "Nigeria"
+  },
+  {
+    "id": 24,
+    "proverb": "Little by little, the bird builds its nest.",
+    "country": "France"
+  },
+  {
+    "id": 25,
+    "proverb": "Better to light a candle than to curse the darkness.",
+    "country": "China"
+  },
+  {
+    "proverb": "The pen is mightier than the sword.",
+    "country": "England",
+    "id": 26
+  },
+  {
+    "proverb": "A bird in the hand is worth two in the bush.",
+    "country": "Spain",
+    "id": 27
+  },
+  {
+    "proverb": "When elephants fight, it is the grass that suffers.",
+    "country": "Kenya",
+    "id": 28
+  },
+  {
+    "proverb": "Better an egg today than a hen tomorrow.",
+    "country": "Italy",
+    "id": 29
+  },
+  {
+    "proverb": "A stitch in time saves nine.",
+    "country": "USA",
+    "id": 30
+  },
+  {
+    "proverb": "If the shoe fits, wear it.",
+    "country": "USA",
+    "id": 31
+  },
+  {
+    "proverb": "You can’t make an omelet without breaking eggs.",
+    "country": "France",
+    "id": 32
+  },
+  {
+    "proverb": "If you chase two rabbits, you will catch neither.",
+    "country": "Russia",
+    "id": 33
+  },
+  {
+    "proverb": "Even monkeys fall from trees.",
+    "country": "Japan",
+    "id": 34
+  },
+  {
+    "proverb": "A closed mouth catches no flies.",
+    "country": "Italy",
+    "id": 35
+  },
+  {
+    "proverb": "Do not call the forest that shelters you a jungle.",
+    "country": "Ghana",
+    "id": 36
+  },
+  {
+    "proverb": "Don’t cross the bridge until you come to it.",
+    "country": "England",
+    "id": 37
+  },
+  {
+    "proverb": "A man is not a man until he has a house of his own.",
+    "country": "Nigeria",
+    "id": 38
+  },
+  {
+    "proverb": "He who digs a pit for others falls in himself.",
+    "country": "Russia",
+    "id": 39
+  },
+  {
+    "proverb": "A gentle hand may lead even an elephant by a single hair.",
+    "country": "Iran",
+    "id": 40
+  },
+  {
+    "proverb": "The nail that sticks out gets hammered down.",
+    "country": "Japan",
+    "id": 41
+  },
+  {
+    "proverb": "A fool says what he knows, and a wise man knows what he says.",
+    "country": "Yiddish",
+    "id": 42
+  },
+  {
+    "proverb": "A hungry stomach has no ears.",
+    "country": "France",
+    "id": 43
+  },
+  {
+    "proverb": "The leopard does not change his spots.",
+    "country": "Nigeria",
+    "id": 44
+  },
+  {
+    "proverb": "He who learns, teaches.",
+    "country": "Ethiopia",
+    "id": 45
+  },
+  {
+    "proverb": "No bees, no honey; no work, no money.",
+    "country": "USA",
+    "id": 46
+  },
+  {
+    "proverb": "Too many captains sink the ship.",
+    "country": "Greece",
+    "id": 47
+  },
+  {
+    "proverb": "When the character of a man is not clear to you, look at his friends.",
+    "country": "Japan",
+    "id": 48
+  },
+  {
+    "proverb": "A man without culture is like a zebra without stripes.",
+    "country": "Africa",
+    "id": 49
+  },
+  {
+    "proverb": "The more you know, the less you need.",
+    "country": "Australia",
+    "id": 50
+  },
+  {
+    "proverb": "Where there is love, there is no darkness.",
+    "country": "Burundi",
+    "id": 51
+  },
+  {
+    "proverb": "He who is destined for power does not have to fight for it.",
+    "country": "Uganda",
+    "id": 52
+  },
+  {
+    "proverb": "Even a small star shines in the darkness.",
+    "country": "Finland",
+    "id": 53
+  },
+  {
+    "proverb": "Patience is a tree whose root is bitter, but its fruit is very sweet.",
+    "country": "Persia",
+    "id": 54
+  },
+  {
+    "proverb": "The night rinses what the day has soaped.",
+    "country": "Sweden",
+    "id": 55
+  },
+  {
+    "proverb": "The one who loves an unsightly person is the one who makes him beautiful.",
+    "country": "Hausa",
+    "id": 56
+  },
+  {
+    "proverb": "A man who counts his money after a party will be counting forever.",
+    "country": "Ethiopia",
+    "id": 57
+  },
+  {
+    "proverb": "Milk the cow but do not pull off the udder.",
+    "country": "Russia",
+    "id": 58
+  },
+  {
+    "proverb": "If you're not part of the solution, you're part of the problem.",
+    "country": "USA",
+    "id": 59
+  },
+  {
+    "proverb": "He who wants a rose must respect the thorn.",
+    "country": "Persia",
+    "id": 60
+  },
+  {
+    "proverb": "The frog does not drink up the pond in which he lives.",
+    "country": "Native American",
+    "id": 61
+  },
+  {
+    "proverb": "A guest is a jewel on the cushion of hospitality.",
+    "country": "India",
+    "id": 62
+  },
+  {
+    "proverb": "The palm of the hand cannot cover the sun.",
+    "country": "Haiti",
+    "id": 63
+  },
+  {
+    "proverb": "He who has health has hope, and he who has hope has everything.",
+    "country": "Arab",
+    "id": 64
+  },
+  {
+    "proverb": "The axe forgets, but the tree remembers.",
+    "country": "Zimbabwe",
+    "id": 65
+  },
+  {
+    "proverb": "Don't set sail on someone else's star.",
+    "country": "African",
+    "id": 66
+  },
+  {
+    "proverb": "Don’t let your tongue cut your throat.",
+    "country": "Ireland",
+    "id": 67
+  },
+  {
+    "proverb": "Even the lion, the king of the forest, protects himself against flies.",
+    "country": "Ghana",
+    "id": 68
+  },
+  {
+    "proverb": "The road to a friend’s house is never long.",
+    "country": "Denmark",
+    "id": 69
+  },
+  {
+    "proverb": "A man does not wander far from where his corn is roasting.",
+    "country": "Nigeria",
+    "id": 70
+  },
+  {
+    "proverb": "A single stick may smoke, but it will not burn.",
+    "country": "Africa",
+    "id": 71
+  },
+  {
+    "proverb": "To understand the road ahead, ask those coming back.",
+    "country": "China",
+    "id": 72
+  },
+  {
+    "proverb": "The person who has not traveled widely thinks his mother is the best cook.",
+    "country": "Africa",
+    "id": 73
+  },
+  {
+    "proverb": "If you offend, ask for pardon; if offended, forgive.",
+    "country": "Ethiopia",
+    "id": 74
+  },
+  {
+    "proverb": "You learn how to cut down trees by cutting them down.",
+    "country": "Bantu",
+    "id": 75
+  },
+  {
+    "proverb": "Rain does not fall on one roof alone.",
+    "country": "Cameroon",
+    "id": 76
+  },
+  {
+    "proverb": "A horse may be coaxed to drink, but a pencil must be lead.",
+    "country": "Ireland",
+    "id": 77
+  },
+  {
+    "proverb": "A bad bush is better than the open field.",
+    "country": "Kenya",
+    "id": 78
+  },
+  {
+    "proverb": "No matter how hot your anger is, it cannot cook yams.",
+    "country": "Nigeria",
+    "id": 79
+  },
+  {
+    "proverb": "Don’t insult the crocodile until you cross the river.",
+    "country": "Ghana",
+    "id": 80
+  },
+  {
+    "proverb": "A dog with a bone in his mouth can't bite.",
+    "country": "USA",
+    "id": 81
+  },
+  {
+    "proverb": "A boat doesn’t go forward if each one is rowing their own way.",
+    "country": "Swahili",
+    "id": 82
+  },
+  {
+    "proverb": "Wisdom is wealth.",
+    "country": "Swahili",
+    "id": 83
+  },
+  {
+    "proverb": "You must act as if it is impossible to fail.",
+    "country": "Nigeria",
+    "id": 84
+  },
+  {
+    "proverb": "A cutting word is worse than a bowstring, a cut may heal, but the cut of the tongue does not.",
+    "country": "Africa",
+    "id": 85
+  },
+  {
+    "proverb": "If the lion doesn’t tell his story, the hunter will.",
+    "country": "Nigeria",
+    "id": 86
+  },
+  {
+    "proverb": "A spider’s web united can tie up a lion.",
+    "country": "Ethiopia",
+    "id": 87
+  },
+  {
+    "proverb": "When the roots are deep, there is no reason to fear the wind.",
+    "country": "Africa",
+    "id": 88
+  },
+  {
+    "proverb": "Rain beats the leopard’s skin but does not wash out the spots.",
+    "country": "Africa",
+    "id": 89
+  },
+  {
+    "proverb": "Wisdom is like fire. People take it from others.",
+    "country": "Africa",
+    "id": 90
+  },
+  {
+    "proverb": "A man who uses force is afraid of reasoning.",
+    "country": "Kenya",
+    "id": 91
+  },
+  {
+    "proverb": "Don’t think there are no crocodiles just because the water is calm.",
+    "country": "Malawi",
+    "id": 92
+  },
+  {
+    "proverb": "By crawling, a child learns to stand.",
+    "country": "Nigeria",
+    "id": 93
+  },
+  {
+    "proverb": "Sticks in a bundle are unbreakable.",
+    "country": "Kenya",
+    "id": 94
+  },
+  {
+    "proverb": "One who loves you warns you.",
+    "country": "Uganda",
+    "id": 95
+  },
+  {
+    "proverb": "Wisdom does not come overnight.",
+    "country": "Somalia",
+    "id": 96
+  },
+  {
+    "proverb": "The house of a person we love is never far.",
+    "country": "Kenya",
+    "id": 97
+  },
+  {
+    "proverb": "Money can’t talk, yet it can make lies look true.",
+    "country": "South Africa",
+    "id": 98
+  },
+  {
+    "proverb": "If you climb up a tree, you must climb down the same tree.",
+    "country": "Ghana",
+    "id": 99
+  },
+  {
+    "proverb": "One finger cannot remove a louse.",
+    "country": "Benin",
+    "id": 100
+  },
+  {
+    "proverb": "Not to know is bad; not to wish to know is worse.",
+    "country": "Nigeria",
+    "id": 101
+  },
+  {
+    "proverb": "He who is being carried does not realize how far the town is.",
+    "country": "Nigeria",
+    "id": 102
+  }
+]

@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './SocialPage.css';
-import event from '../images/social.png';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./SocialPage.css";
+import event from "../images/social.png";
 
 const SocialPage = () => {
   return (
@@ -11,8 +11,11 @@ const SocialPage = () => {
         <div className="intro-section">
           <h1>Let's go Social!</h1>
           <p>
-            Ready to make the world a little smaller (and way cooler)?
-            Create and join events with awesome people from everywhere – because who says we can't connect over a virtual book club, a cup of coffee, or a language exchange? Let's make the world better, one meetUp at a time!
+            Ready to make the world a little smaller (and way cooler)? Create
+            and join events with awesome people from everywhere – because who
+            says we can't connect over a virtual book club, a cup of coffee, or
+            a language exchange? Let's make the world better, one meetUp at a
+            time!
           </p>
         </div>
 
@@ -34,7 +37,9 @@ const SocialPage = () => {
         {/* Button to Open Events Page */}
         <div className="explore-events">
           <h2>Ready to Join?</h2>
-          <Link to="/open-events" className="explore-btn">Explore Open Events</Link>
+          <Link to="/open-events" className="explore-btn">
+            Explore Open Events
+          </Link>
         </div>
 
         {/* Image Section */}

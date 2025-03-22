@@ -1,0 +1,124 @@
+.radio-container {
+  width: 250px;
+  background: #222;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+.radio-default {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.station-info {
+  font-size: 16px; /* Increased font size */
+  margin-bottom: 10px;
+}
+
+.play-button,
+.expand-button,
+.random-button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px; /* Increased padding */
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px; /* Increased font size */
+}
+
+.volume-slider {
+  width: 80%;
+  margin-top: 10px;
+}
+
+.station-popup {
+  position: absolute;
+  width: 600px; /* Double the size */
+  background: #444;
+  color: white;
+  padding: 30px; /* Increased padding */
+  border-radius: 5px;
+  text-align: left;
+  max-height: 500px; /* Increased max height */
+  overflow-y: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+.station-item {
+  display: flex;
+  align-items: center;
+  padding: 15px; /* Increased padding */
+  cursor: pointer;
+}
+
+.station-item:hover {
+  background: #555;
+}
+
+.station-logo {
+  width: 120px; /* Double the size */
+  height: 120px; /* Double the size */
+  margin-right: 20px; /* Increased margin */
+  border-radius: 50%;
+}
+
+.close-popup-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff5c5c;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.search-box {
+  width: 80%;
+  padding: 8px;
+  margin: 10px;
+}
+
+.country-list {
+  width: 100%;
+}
+
+.close-button {
+  background: #ff5c5c;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.expand-button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Increased size for emojis */
+.expand-button,
+.random-button {
+  font-size: 24px; /* Doubled the emoji size */
+}
