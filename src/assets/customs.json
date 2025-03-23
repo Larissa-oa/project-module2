@@ -1,0 +1,252 @@
+[
+    {
+        "id": 1,
+        "custom": "Tipping is not expected in restaurants.",
+        "country": "Japan"
+    },
+    {
+        "id": 2,
+        "custom": "People clap when a plane lands safely.",
+        "country": "Malta"
+    },
+    {
+        "id": 3,
+        "custom": "Whistling indoors is considered bad luck.",
+        "country": "Russia"
+    },
+    {
+        "id": 4,
+        "custom": "Using both hands when giving or receiving something is a sign of respect.",
+        "country": "South Korea"
+    },
+    {
+        "id": 5,
+        "custom": "People take their shoes off before entering a home.",
+        "country": "Sweden"
+    },
+    {
+        "id": 6,
+        "custom": "It is customary to bring bread and salt as a housewarming gift.",
+        "country": "Poland"
+    },
+    {
+        "id": 7,
+        "custom": "A baby’s first haircut is often saved as a keepsake.",
+        "country": "China"
+    },
+    {
+        "id": 8,
+        "custom": "Christmas presents are opened on Christmas Eve, not Christmas Day.",
+        "country": "Germany"
+    },
+    {
+        "id": 9,
+        "custom": "Children leave their shoes out for treats on St. Nicholas Day.",
+        "country": "Netherlands"
+    },
+    {
+        "id": 10,
+        "custom": "Slurping noodles is considered polite.",
+        "country": "Japan"
+    },
+    {
+        "id": 11,
+        "custom": "The birthday person pays for their own party.",
+        "country": "Germany"
+    },
+    {
+        "id": 12,
+        "custom": "Spitting is considered a way to ward off bad luck.",
+        "country": "Greece"
+    },
+    {
+        "id": 13,
+        "custom": "People wear red underwear on New Year’s Eve for good luck.",
+        "country": "Spain"
+    },
+    {
+        "id": 14,
+        "custom": "Never give an even number of flowers as a gift.",
+        "country": "Russia"
+    },
+    {
+        "id": 15,
+        "custom": "Handshakes should be firm and eye contact is important.",
+        "country": "United States"
+    },
+    {
+        "id": 16,
+        "custom": "Bread is never placed upside down on the table.",
+        "country": "France"
+    },
+    {
+        "id": 17,
+        "custom": "Throwing old furniture out the window on New Year's Eve is common.",
+        "country": "Italy"
+    },
+    {
+        "id": 18,
+        "custom": "When greeting, a kiss on both cheeks is common.",
+        "country": "Argentina"
+    },
+    {
+        "id": 19,
+        "custom": "People eat 12 grapes at midnight on New Year's Eve for good luck.",
+        "country": "Spain"
+    },
+    {
+        "id": 20,
+        "custom": "Shoes should not be placed on the table.",
+        "country": "United Kingdom"
+    },
+    {
+        "id": 21,
+        "custom": "Guests should bring a small gift when visiting someone's home.",
+        "country": "Turkey"
+    },
+    {
+        "id": 22,
+        "custom": "People light sky lanterns for good luck.",
+        "country": "Thailand"
+    },
+    {
+        "id": 23,
+        "custom": "Cutting a baby's hair before their first birthday is considered bad luck.",
+        "country": "India"
+    },
+    {
+        "id": 24,
+        "custom": "Pointing with the index finger is considered rude.",
+        "country": "Malaysia"
+    },
+    {
+        "id": 25,
+        "custom": "Wearing yellow on New Year's Eve attracts wealth.",
+        "country": "Brazil"
+    },
+    {
+        "id": 26,
+        "custom": "Newborn babies are given a silver spoon for good fortune.",
+        "country": "Scotland"
+    },
+    {
+        "id": 27,
+        "custom": "Sitting at the corner of a table means you may never get married.",
+        "country": "Hungary"
+    },
+    {
+        "id": 28,
+        "custom": "Giving knives as gifts is believed to sever relationships.",
+        "country": "China"
+    },
+    {
+        "id": 29,
+        "custom": "The groom's shoes are often stolen during weddings.",
+        "country": "India"
+    },
+    {
+        "id": 30,
+        "custom": "People walk barefoot during religious ceremonies.",
+        "country": "Sri Lanka"
+    },
+    {
+        "id": 31,
+        "custom": "Nodding means 'no' and shaking the head means 'yes'.",
+        "country": "Bulgaria"
+    },
+    {
+        "id": 32,
+        "custom": "Whistling at night attracts bad spirits.",
+        "country": "Turkey"
+    },
+    {
+        "id": 33,
+        "custom": "It's common to drink from a shared gourd of mate.",
+        "country": "Argentina"
+    },
+    {
+        "id": 34,
+        "custom": "Children throw baby teeth onto the roof for good luck.",
+        "country": "Mexico"
+    },
+    {
+        "id": 35,
+        "custom": "The oldest person at the table should start eating first.",
+        "country": "China"
+    },
+    {
+        "id": 36,
+        "custom": "People pour water behind travelers for good luck.",
+        "country": "Serbia"
+    },
+    {
+        "id": 37,
+        "custom": "People avoid shaking hands across a doorway.",
+        "country": "Russia"
+    },
+    {
+        "id": 38,
+        "custom": "Sweeping someone's feet means they may never get married.",
+        "country": "Brazil"
+    },
+    {
+        "id": 39,
+        "custom": "Burping after a meal is seen as a compliment to the chef.",
+        "country": "Saudi Arabia"
+    },
+    {
+        "id": 40,
+        "custom": "The number four is considered unlucky.",
+        "country": "China"
+    },
+    {
+        "id": 41,
+        "custom": "Standing chopsticks in rice is bad luck.",
+        "country": "Japan"
+    },
+    {
+        "id": 42,
+        "custom": "A thumb between the index and middle finger wards off the evil eye.",
+        "country": "Italy"
+    },
+    {
+        "id": 43,
+        "custom": "Married women wear black on their wedding day.",
+        "country": "Spain"
+    },
+    {
+        "id": 44,
+        "custom": "Brides wear crowns made of silver and gold.",
+        "country": "Norway"
+    },
+    {
+        "id": 45,
+        "custom": "Opening an umbrella indoors is bad luck.",
+        "country": "United Kingdom"
+    },
+    {
+        "id": 46,
+        "custom": "Throwing coins into fountains brings good luck.",
+        "country": "Italy"
+    },
+    {
+        "id": 47,
+        "custom": "The first guest at a New Year's gathering should be a dark-haired man.",
+        "country": "Scotland"
+    },
+    {
+        "id": 48,
+        "custom": "Women wear corsets as a cultural tradition.",
+        "country": "Colombia"
+    },
+    {
+        "id": 49,
+        "custom": "People must never toast with water.",
+        "country": "Germany"
+    },
+    {
+        "id": 50,
+        "custom": "Brides hide pennies in their shoes for good luck.",
+        "country": "United States"
+    }
+]

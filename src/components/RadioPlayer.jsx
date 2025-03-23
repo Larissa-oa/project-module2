@@ -9,12 +9,12 @@ const RadioPlayer = () => {
   const [search, setSearch] = useState("");
   const [isExpanded, setIsExpanded] = useState(false);
   const [showStationsPopup, setShowStationsPopup] = useState(false);
-  const [volume, setVolume] = useState(0.8);
+  const [volume, setVolume] = useState(0.1);
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = React.useRef(null);
 
   useEffect(() => {
-    fetch("https://de1.api.radio-browser.info/json/countries")
+    fetch("https://nl1.api.radio-browser.info/json/countries")
       .then((res) => res.json())
       .then((data) => {
         const sortedCountries = data
@@ -27,7 +27,7 @@ const RadioPlayer = () => {
   const loadStations = (countryCode) => {
     setSelectedCountry(countryCode);
     fetch(
-      `https://de1.api.radio-browser.info/json/stations/bycountrycodeexact/${countryCode}?limit=10&order=clickcount&reverse=true`
+      `https://nl1.api.radio-browser.info/json/stations/bycountrycodeexact/${countryCode}?limit=10&order=clickcount&reverse=true`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -72,7 +72,7 @@ const RadioPlayer = () => {
       const randomCountry =
         countries[Math.floor(Math.random() * countries.length)].code;
       fetch(
-        `https://de1.api.radio-browser.info/json/stations/bycountrycodeexact/${randomCountry}?limit=10&order=clickcount&reverse=true`
+        `https://nl1.api.radio-browser.info/json/stations/bycountrycodeexact/${randomCountry}?limit=10&order=clickcount&reverse=true`
       )
         .then((res) => res.json())
         .then((data) => {
@@ -98,6 +98,7 @@ const RadioPlayer = () => {
     <div className="radio-container">
       {!isExpanded ? (
         <div className="radio-default">
+          <h2>World Radio</h2>
           <p className="station-info">
             🌍{" "}
             {selectedCountry

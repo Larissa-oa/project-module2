@@ -75,9 +75,9 @@ html {
   margin-left: 20px;
 }
 
-.div1:hover {
+/* .div1:hover {
   transform: scale(1.05);
-}
+} */
 
 .div2 {
   grid-area: div2;
@@ -93,9 +93,9 @@ html {
   bottom: -8vw;
 }
 
-.div2:hover {
+/* .div2:hover {
   transform: scale(1.03);
-}
+} */
 
 .div3 {
   grid-area: div3;
@@ -112,9 +112,9 @@ html {
   bottom: -5vw;
 }
 
-.div3:hover {
+/* .div3:hover {
   transform: scale(1.05);
-}
+} */
 
 .div4 {
   grid-area: div4;
@@ -131,9 +131,9 @@ html {
   z-index: 10;
 }
 
-.div4:hover {
+/* .div4:hover {
   transform: scale(1.05);
-}
+} */
 
 .div5 {
   grid-area: div4;
@@ -149,8 +149,21 @@ html {
   transition: transform 0.3s ease-in-out;
 }
 
-.div5:hover {
+/* .div5:hover {
   transform: scale(1.05);
+} */
+
+.customs-and-proverbs {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+.customs-and-proverbs h2 {
+  font-size: 30px;
+  font-weight: 500;
+  color: #fff;
 }
 
 @media (max-width: 768px) {

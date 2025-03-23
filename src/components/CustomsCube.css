@@ -1,4 +1,4 @@
-.proverb-cube-container {
+.customs-cube-container {
   width: 100%;
   max-width: 500px;
   height: 400px;
@@ -8,8 +8,8 @@
   will-change: transform; /* Optimization for animations */
 }
 
-.proverb-cube-loading,
-.proverb-cube-error {
+.customs-cube-loading,
+.customs-cube-error {
   width: 100%;
   height: 200px;
   display: flex;
@@ -29,7 +29,7 @@
   contain: layout; /* Performance optimization */
 }
 
-.proverb-slide {
+.custom-slide {
   width: 100%;
   height: 100%;
   display: flex;
@@ -41,7 +41,7 @@
   transform: translate3d(0, 0, 0); /* Forcing hardware acceleration */
 }
 
-.proverb-content {
+.custom-content {
   width: 100%;
   height: 100%;
   display: flex;
@@ -49,7 +49,7 @@
   justify-content: space-between;
 }
 
-.proverb-text {
+.custom-text {
   font-size: 30px;
   font-weight: 500;
   line-height: 1.4;
@@ -60,10 +60,10 @@
   justify-content: center;
   margin: 0;
   padding: 0 15px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
 
-.proverb-country {
+.custom-country {
   font-size: 24px;
   font-style: italic;
   color: #fff;
@@ -84,15 +84,15 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .proverb-cube-container {
+  .customs-cube-container {
     height: 350px;
   }
 
-  .proverb-text {
+  .custom-text {
     font-size: 18px;
   }
 
-  .proverb-country {
+  .custom-country {
     font-size: 14px;
   }
 }
