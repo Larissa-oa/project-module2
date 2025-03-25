@@ -1,9 +1,10 @@
 .radio-container {
-  width: 250px;
-  background: #222;
+  width: 22.5vw;
+  height:32vw;
+  background: linear-gradient(45deg, #333333, #2a2a2a);
   color: white;
   padding: 15px;
-  border-radius: 8px;
+  border-radius: 20px;
   text-align: center;
   position: relative;
   font-family: Arial, sans-serif;
@@ -23,14 +24,15 @@
 .play-button,
 .expand-button,
 .random-button {
-  background: #007bff;
+  background: linear-gradient(45deg, #39124a, #6f1d57);
+  border: 1px solid white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   color: white;
-  border: none;
   padding: 10px 20px; /* Increased padding */
   margin: 5px;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 18px; /* Increased font size */
+  font-size: 14px; /* Increased font size */
 }
 
 .volume-slider {
@@ -107,18 +109,20 @@
 }
 
 .expand-button {
-  background: #007bff;
+  background: linear-gradient(45deg, #39124a, #6f1d57);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   color: white;
-  border: none;
+  border: 1px solid white;
   padding: 8px 15px;
   margin: 5px;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 13px;
 }
 
 /* Increased size for emojis */
 .expand-button,
 .random-button {
-  font-size: 24px; /* Doubled the emoji size */
+  font-size: 20px; /* Doubled the emoji size */
+  margin-top: 10px;
 }

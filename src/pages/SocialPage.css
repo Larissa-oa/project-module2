@@ -65,13 +65,27 @@ body, html{
     justify-content: center;
   }
   
-  .event-card {
+  .event-card-online {
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     position: relative;
     transition: transform 0.3s ease;
+    color: #fff;
+   background: linear-gradient(135deg, #ff9a9e, #fecfef);;
+    width: 300px;
+    margin-bottom: 20px;
+  }
+
+  .event-card-in-person {
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+    background: linear-gradient(135deg, #fceabb, #f8b500);
     color: #fff;
     width: 300px;
     margin-bottom: 20px;
@@ -103,14 +117,6 @@ body, html{
   .event-btn:hover {
     background-color: #ff4e3a;
     transform: scale(1.05);
-  }
-  
-  .event-card.online {
-    background: linear-gradient(135deg, #ff9a9e, #fecfef);
-  }
-  
-  .event-card.in-person {
-    background: linear-gradient(135deg, #fceabb, #f8b500);
   }
   
   .explore-events {
