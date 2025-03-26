@@ -1,0 +1,140 @@
+/* Recipes Details Page */
+.recipe-detail-page {
+  background-color: #e9d8a6;
+  color: #001219;
+  font-family: Arial, sans-serif;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.recipe-card-info {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 20px;
+}
+
+.image-recipe-card-info {
+  width: 100%;
+  max-width: 350px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-recipe-card-info img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.recipe-card-text-main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h2 {
+  color: #005f73;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+h3 {
+  color: #94d2bd;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.recipe-information-instructions {
+  font-size: 1rem;
+  color: #001219;
+}
+
+.recipe-information-instructions p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.update-recipe-btn-section {
+  display: flex;
+  gap: 20px;
+  margin-top: auto;
+}
+
+.update-recipe-btn-section button {
+  background-color: #ca6702;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.update-recipe-btn-section button:hover {
+  background-color: #bb3e03;
+}
+
+button {
+  background-color: #94d2bd;
+  color: #001219;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #005f73;
+}
+
+button:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.recipe-detail-page button {
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ca6702;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.recipe-detail-page button:hover {
+  background-color: #bb3e03;
+}
+
+.recipe-detail-page button:focus {
+  outline: none;
+}

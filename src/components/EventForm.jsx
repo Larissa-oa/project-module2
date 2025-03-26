@@ -13,6 +13,7 @@ const EventForm = ({ eventType, addEvent, closeForm }) => {
     eventAddress: '',
     eventLink: '',
     eventTimezone: '', 
+    eventImage: '',
   });
 
   const handleChange = (event) => {
@@ -46,6 +47,7 @@ const EventForm = ({ eventType, addEvent, closeForm }) => {
       link: formData.eventLink || "",
       timezone: formData.eventTimezone,
       timestamp: new Date().toISOString(),
+      image: formData.eventImage,
     };
 
     addEvent(newEvent);
@@ -61,6 +63,7 @@ const EventForm = ({ eventType, addEvent, closeForm }) => {
       eventAddress: '',
       eventLink: '',
       eventTimezone: '', 
+      eventImage: '',
     });
 
     closeForm();
@@ -127,6 +130,17 @@ const EventForm = ({ eventType, addEvent, closeForm }) => {
         />
       </div>
 
+      <div className="form-group"> 
+        <label htmlFor="eventImage">Image</label>
+        <input 
+        type="text"
+        id="eventImage"
+        name="eventImage"
+        value={formData.eventImage}
+        onChange={handleChange} 
+        />
+      </div>
+
       
       {eventType !== "Online" && (
         <>
@@ -171,7 +185,7 @@ const EventForm = ({ eventType, addEvent, closeForm }) => {
         </div>
       )}
 
-      <div className="form-group">
+      <div className="form-group" id="time-form">
         <label htmlFor="eventTimezone">Timezone</label>
         <input
           type="text"
