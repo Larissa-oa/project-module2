@@ -302,9 +302,7 @@ const NewsSlider = () => {
                   <div className="news-item">
                     <div className="news-image-container">
                       <img
-                        src={
-                          article.image_url || "https://via.placeholder.com/300"
-                        }
+                        src={article.image_url || "https://placehold.co/300"}
                         alt={article.title}
                         className="news-image"
                       />
@@ -344,9 +342,7 @@ const NewsSlider = () => {
                 <SwiperSlide key={index}>
                   <div className="thumb-item">
                     <img
-                      src={
-                        article.image_url || "https://via.placeholder.com/150"
-                      }
+                      src={article.image_url || "https://placehold.co/150"}
                       alt={article.title}
                       className="thumb-image"
                     />

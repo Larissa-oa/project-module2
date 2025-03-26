@@ -186,7 +186,7 @@ const RadioPlayer = () => {
                 src={
                   station.favicon
                     ? station.favicon
-                    : "https://via.placeholder.com/60x60?text=🎵"
+                    : "https://placehold.co/60x60?text=🎵"
                 }
                 alt={station.name}
                 className="station-logo"

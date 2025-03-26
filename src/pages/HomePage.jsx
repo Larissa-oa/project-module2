@@ -69,6 +69,7 @@ const HomePage = () => {
             <Link to="/allevents" className="all-events-link">
               All Events Page
             </Link>
+            <Link to="/recipes">Recipes</Link>
           </div>
         </div>
       </main>

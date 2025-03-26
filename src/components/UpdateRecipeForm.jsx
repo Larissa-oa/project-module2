@@ -4,7 +4,7 @@ import axios from "axios";
 import "./UpdateRecipeForm.css";
 
 const UpdateRecipeForm = ({ onClose }) => {
-  const { id } = useParams();
+  const { recipeId } = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
@@ -21,7 +21,9 @@ const UpdateRecipeForm = ({ onClose }) => {
   useEffect(() => {
     const fetchRecipe = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/recipes/${id}`);
+        const response = await axios.get(
+          `http://localhost:4000/recipes/${recipeId}`
+        );
         const recipeData = response.data;
 
         setFormData({
@@ -42,7 +44,7 @@ const UpdateRecipeForm = ({ onClose }) => {
     };
 
     fetchRecipe();
-  }, [id]);
+  }, [recipeId]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -104,9 +106,9 @@ const UpdateRecipeForm = ({ onClose }) => {
     };
 
     try {
-      // Send PUT request to update the recipe
-      const response = await axios.put(
-        `http://localhost:4000/recipes/${id}`,
+      // Send PATCH request to update the entire recipe
+      const response = await axios.patch(
+        `http://localhost:4000/recipes/${recipeId}`,
         updatedRecipe
       );
 
@@ -153,7 +155,7 @@ const UpdateRecipeForm = ({ onClose }) => {
                 <button
                   onClick={() => {
                     onClose();
-                    navigate(`/recipe/${id}`);
+                    navigate(`/recipes/${recipeId}`);
                   }}
                   className="yes-button"
                 >
