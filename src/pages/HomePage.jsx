@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./HomePage.css";
 import { Link } from "react-router-dom";
-
 import RadioPlayer from "../components/RadioPlayer";
 import ProverbCube from "../components/ProverbCube";
 import NewsSlider from "../components/NewsSlider";
 import CustomsCube from "../components/CustomsCube";
 import WorldCalendar from "../components/WorldCalendar";
 import Welcome from "../components/Welcome";
+import RecipeForm from "../components/RecipeForm";
+import RecipeCardsCarousel from "../components/RecipeCardsCarousel";
 
 const HomePage = () => {
+  const [isRecipeFormOpen, setIsRecipeFormOpen] = useState(false);
+
   return (
     <>
       <main className="homepage">
@@ -22,6 +25,23 @@ const HomePage = () => {
         {/* DIV1 */}
         <div className="div1">
           <WorldCalendar />
+
+          {/* Add a Recipe Button */}
+          <div className="add-recipe-section">
+            <button
+              onClick={() => setIsRecipeFormOpen(true)}
+              className="add-recipe-button"
+            >
+              Add a Recipe
+            </button>
+          </div>
+
+          {/* Render the RecipeForm as a popup when isRecipeFormOpen is true */}
+          {isRecipeFormOpen && (
+            <RecipeForm onClose={() => setIsRecipeFormOpen(false)} />
+          )}
+
+          <RecipeCardsCarousel />
         </div>
 
         {/* DIV2 */}

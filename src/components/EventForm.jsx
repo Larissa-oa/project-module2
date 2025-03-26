@@ -4,22 +4,6 @@ import "./EventForm.css";
 
 const EventForm = ({ eventType, addEvent, closeForm }) => {
   const [formData, setFormData] = useState({
-<<<<<<< HEAD
-    eventTitle: '',
-    eventDate: '',
-    eventTime: '',
-    eventDescription: '',
-    eventLocation: eventType,
-    eventCity: '',
-    eventAddress: '',
-    eventLink: '',
-    eventTimezone: '', 
-  });
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
-=======
     eventTitle: "",
     eventDate: "",
     eventTime: "",
@@ -31,14 +15,9 @@ const EventForm = ({ eventType, addEvent, closeForm }) => {
     eventTimezone: "",
   });
 
-  // Add the handleChange function
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
->>>>>>> vas
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = (event) => {
@@ -48,17 +27,10 @@ const EventForm = ({ eventType, addEvent, closeForm }) => {
       !formData.eventTitle ||
       !formData.eventDate ||
       !formData.eventLocation ||
-<<<<<<< HEAD
-      !formData.eventTimezone || 
-      (eventType === "Online" && !formData.eventLink)
-    ) {
-      alert('Please fill in all required fields.');
-=======
       !formData.eventTimezone ||
       (eventType === "Online" && !formData.eventLink)
     ) {
       alert("Please fill in all required fields.");
->>>>>>> vas
       return;
     }
 
@@ -68,11 +40,7 @@ const EventForm = ({ eventType, addEvent, closeForm }) => {
       date: formData.eventDate,
       time: formData.eventTime,
       description: formData.eventDescription,
-<<<<<<< HEAD
       location: formData.eventType,
-=======
-      location: formData.eventLocation,
->>>>>>> vas
       city: formData.eventCity,
       address: formData.eventAddress,
       link: formData.eventLink || "",
@@ -83,19 +51,6 @@ const EventForm = ({ eventType, addEvent, closeForm }) => {
     addEvent(newEvent);
     console.log(newEvent);
 
-<<<<<<< HEAD
-    setFormData({
-      eventTitle: '',
-      eventDate: '',
-      eventTime: '',
-      eventDescription: '',
-      eventLocation: eventType,
-      eventCity: '',
-      eventAddress: '',
-      eventLink: '',
-      eventTimezone: '', 
-=======
-    // Reset form
     setFormData({
       eventTitle: "",
       eventDate: "",
@@ -106,7 +61,6 @@ const EventForm = ({ eventType, addEvent, closeForm }) => {
       eventAddress: "",
       eventLink: "",
       eventTimezone: "",
->>>>>>> vas
     });
 
     closeForm();
@@ -173,10 +127,6 @@ const EventForm = ({ eventType, addEvent, closeForm }) => {
         />
       </div>
 
-<<<<<<< HEAD
-      
-=======
->>>>>>> vas
       {eventType !== "Online" && (
         <>
           <div className="form-group">
@@ -192,11 +142,7 @@ const EventForm = ({ eventType, addEvent, closeForm }) => {
           </div>
 
           <div className="form-group">
-<<<<<<< HEAD
             <label htmlFor="eventCountry">Address</label>
-=======
-            <label htmlFor="eventAddress">Address</label>
->>>>>>> vas
             <input
               type="text"
               id="eventAddress"
