@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./SocialPage.css";
 import event from "../images/social.png";
+import EventForm from "../components/EventForm";
 
-const SocialPage = () => {
+const SocialPage = ({ addEvent }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [eventType, setEventType] = useState("");
+
+  const openModal = (type) => {
+    setEventType(type);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="social-page">
       <div className="container">
-        {/* Page Introduction */}
         <div className="intro-section">
           <h1>Let's go Social!</h1>
           <p>
@@ -19,33 +31,51 @@ const SocialPage = () => {
           </p>
         </div>
 
-        {/* Event Creation Section */}
         <div className="event-options">
-          <div className="event-card online">
+          <div className="event-card-online">
             <h2>Online Meetings</h2>
-            <p>blablabla</p>
-            <button className="event-btn">Create Online Event</button>
+            <button className="event-btn" onClick={() => openModal("Online")}>
+              Create Online Event
+            </button>
           </div>
 
-          <div className="event-card in-person">
+          <div className="event-card-in-person">
             <h2>In-Person Meetups</h2>
-            <p>blablabla</p>
-            <button className="event-btn">Create In-Person Event</button>
+            <button
+              className="event-btn"
+              onClick={() => openModal("In-Person")}
+            >
+              Create In-Person Event
+            </button>
           </div>
         </div>
 
-        {/* Button to Open Events Page */}
         <div className="explore-events">
           <h2>Ready to Join?</h2>
-          <Link to="/open-events" className="explore-btn">
+          <Link to="/allevents" className="explore-btn">
             Explore Open Events
           </Link>
         </div>
 
-        {/* Image Section */}
         <div className="image-section">
           <img src={event} alt="Social Event" className="rotating-image" />
         </div>
+
+        {isModalOpen && (
+          <div className="overlay">
+            <div className="form-content">
+              <button className="close-btn" onClick={closeModal}>
+                X
+              </button>
+
+              <EventForm
+                eventType={eventType}
+                addEvent={addEvent}
+                closeForm={closeModal}
+              />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

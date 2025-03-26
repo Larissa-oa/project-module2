@@ -1,6 +1,6 @@
 .radio-container {
   width: 250px;
-  background: #222;
+  background: #000000;
   color: white;
   padding: 15px;
   border-radius: 8px;
@@ -16,21 +16,21 @@
 }
 
 .station-info {
-  font-size: 16px; /* Increased font size */
+  font-size: 20px; /* Increased font size */
   margin-bottom: 10px;
 }
 
 .play-button,
 .expand-button,
 .random-button {
-  background: #007bff;
+  background: purple;
   color: white;
   border: none;
   padding: 10px 20px; /* Increased padding */
   margin: 5px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 18px; /* Increased font size */
+  font-size: 22px; /* Increased font size */
 }
 
 .volume-slider {

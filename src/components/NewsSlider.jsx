@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
@@ -14,9 +14,8 @@ import "swiper/css/pagination";
 import "swiper/css/thumbs";
 import "swiper/css/free-mode";
 import "./NewsSlider.css";
-
-const API_KEY = "pub_75710b5ef7e686c9b6786101ab4c994ba845d"; // Replace with your actual newsdata.io API key
-
+const API_KEY = "pub_75710b5ef7e686c9b6786101ab4c994ba845d";
+// Replace with your actual newsdata.io API key
 const SUPPORTED_COUNTRIES = [
   { name: "Afghanistan", code: "af" },
   { name: "Albania", code: "al" },
@@ -178,14 +177,14 @@ const SUPPORTED_COUNTRIES = [
   { name: "Zambia", code: "zm" },
   { name: "Zimbabwe", code: "zw" },
 ];
-
 const NewsSlider = () => {
   const [news, setNews] = useState([]);
   const [selectedCountry, setSelectedCountry] = useState("us");
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
+  const [showCountryPopup, setShowCountryPopup] = useState(false); // State to control the country popup
+  const searchRef = useRef(null);
   useEffect(() => {
     const fetchNews = async () => {
       setLoading(true);
@@ -193,8 +192,6 @@ const NewsSlider = () => {
         const response = await axios.get(
           `https://newsdata.io/api/1/news?apikey=${API_KEY}&country=${selectedCountry}&size=10`
         );
-        console.log("API Response:", response.data);
-
         if (response.data.status === "success" && response.data.results) {
           setNews(response.data.results);
         } else {
@@ -207,46 +204,81 @@ const NewsSlider = () => {
         setLoading(false);
       }
     };
-
     fetchNews();
   }, [selectedCountry]);
-
   const handleCountryChange = (e) => {
     setSelectedCountry(e.target.value);
   };
-
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value.toLowerCase());
   };
-
   const filteredCountries = SUPPORTED_COUNTRIES.filter((country) =>
     country.name.toLowerCase().includes(searchTerm)
   );
-
+  // Function to get country flag emoji
+  const getCountryFlagEmoji = (countryCode) => {
+    if (!countryCode || countryCode.length !== 2) return "";
+    const codePoints = countryCode
+      .toUpperCase()
+      .split("")
+      .map((char) => 127397 + char.charCodeAt());
+    return String.fromCodePoint(...codePoints);
+  };
+  const toggleCountryPopup = () => {
+    setShowCountryPopup(!showCountryPopup);
+  };
   return (
     <div className="news-container">
       <div className="news-slider-container">
         <div className="country-selection">
-          <input
-            type="text"
-            placeholder="Search country..."
-            value={searchTerm}
-            onChange={handleSearchChange}
-            className="country-search"
-          />
-          <select
-            onChange={handleCountryChange}
-            value={selectedCountry}
-            className="country-dropdown"
+          <button
+            className="country-select-button"
+            onClick={toggleCountryPopup}
           >
-            {filteredCountries.map((country) => (
-              <option key={country.code} value={country.code}>
-                {country.name}
-              </option>
-            ))}
-          </select>
+            {SUPPORTED_COUNTRIES.find((c) => c.code === selectedCountry)?.name}
+          </button>
+          {showCountryPopup && (
+            <div className="country-list-popup" ref={searchRef}>
+              <div className="search-header">
+                <h3>Select a Country</h3>
+                <button className="close-button" onClick={toggleCountryPopup}>
+                  ✕
+                </button>
+              </div>
+              <div className="search-input-container">
+                <input
+                  type="text"
+                  placeholder="Search countries..."
+                  value={searchTerm}
+                  onChange={handleSearchChange}
+                  className="country-search"
+                  autoFocus
+                />
+              </div>
+              <div className="countries-list">
+                {filteredCountries.length === 0 ? (
+                  <div className="no-results">No countries found</div>
+                ) : (
+                  filteredCountries.map((country) => (
+                    <div
+                      key={country.code}
+                      className="country-item"
+                      onClick={() => {
+                        setSelectedCountry(country.code);
+                        toggleCountryPopup();
+                      }}
+                    >
+                      <span className="country-flag">
+                        {getCountryFlagEmoji(country.code)}
+                      </span>
+                      {country.name}
+                    </div>
+                  ))
+                )}
+              </div>
+            </div>
+          )}
         </div>
-
         {loading ? (
           <div className="loading">Loading news...</div>
         ) : news.length === 0 ? (
@@ -299,7 +331,6 @@ const NewsSlider = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
-
             <Swiper
               onSwiper={setThumbsSwiper}
               modules={[FreeMode, Navigation, Thumbs]}
@@ -314,14 +345,11 @@ const NewsSlider = () => {
                   <div className="thumb-item">
                     <img
                       src={
-                        article.image_url || "https://via.placeholder.com/100"
+                        article.image_url || "https://via.placeholder.com/150"
                       }
                       alt={article.title}
                       className="thumb-image"
                     />
-                    <div className="thumb-title">
-                      {article.title.substring(0, 30)}...
-                    </div>
                   </div>
                 </SwiperSlide>
               ))}
@@ -332,5 +360,4 @@ const NewsSlider = () => {
     </div>
   );
 };
-
 export default NewsSlider;

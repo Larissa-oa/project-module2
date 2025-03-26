@@ -19,7 +19,7 @@ const CustomsCube = () => {
     "#800080",
     "#1E90FF",
     "#B22222",
-    "#A52A2A",
+    "#E6B800",
   ];
 
   // Function to shuffle the proverbs array

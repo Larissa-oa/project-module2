@@ -29,6 +29,8 @@ html {
   background-image: url("../images/map.png");
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
 
   position: absolute;
   top: 10vw;

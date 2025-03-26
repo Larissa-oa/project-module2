@@ -14,6 +14,10 @@ const RadioPlayer = () => {
   const audioRef = React.useRef(null);
 
   useEffect(() => {
+    if (audioRef.current) audioRef.current.volume = volume;
+  }, []);
+
+  useEffect(() => {
     fetch("https://nl1.api.radio-browser.info/json/countries")
       .then((res) => res.json())
       .then((data) => {
@@ -85,11 +89,9 @@ const RadioPlayer = () => {
   };
 
   useEffect(() => {
-    document.addEventListener("mousemove", loadRandomStation, { once: true });
     document.addEventListener("click", loadRandomStation, { once: true });
 
     return () => {
-      document.removeEventListener("mousemove", loadRandomStation);
       document.removeEventListener("click", loadRandomStation);
     };
   }, [countries]);
@@ -110,7 +112,7 @@ const RadioPlayer = () => {
 
           {/* Play/Pause Button */}
           <button className="play-button" onClick={togglePlayPause}>
-            {isPlaying ? "⏸" : "▶️"}
+            {isPlaying ? "⏸️" : "▶️"}
           </button>
 
           {/* Volume Slider */}

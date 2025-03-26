@@ -211,96 +211,99 @@ const WorldCalendar = () => {
   };
 
   return (
-    <div className="world-calendar-container">
-      <h1 className="main-title">World Holiday Calendar</h1>
+    <>
+      <div className="world-calendar-container">
+        <h1 className="main-title">World Holiday Calendar</h1>
 
-      {/* Weekly Calendar */}
-      <div className="weekly-calendar">
-        <h2>Holidays This Week</h2>
-        <div className="weekly-holidays-scrollable">
-          {loading && weeklyHolidays.length === 0 ? (
-            <div className="loading">Loading weekly holidays...</div>
-          ) : error ? (
-            <div className="error">{error}</div>
-          ) : weeklyHolidays.length === 0 ? (
-            <div className="no-holidays">No holidays found this week</div>
-          ) : (
-            <div className="holiday-list">
-              {getGroupedHolidays().map((group, groupIndex) => (
-                <div key={groupIndex} className="holiday-group">
-                  <h3>{formatDate(group.date)}</h3>
-                  <ul>
-                    {group.holidays.map((holiday, holidayIndex) => (
-                      <li key={holidayIndex}>
-                        <div className="holiday-name">{holiday.name}</div>
-                        <div className="holiday-country">
-                          <span className="country-flag">
-                            {getCountryFlagEmoji(holiday.countryCode)}
-                          </span>
-                          {getCountryNameFromCode(holiday.countryCode)}
-                          {holiday.localName &&
-                            holiday.localName !== holiday.name &&
-                            ` (${holiday.localName})`}
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+        {/* Weekly Calendar */}
+        <div className="weekly-calendar">
+          <h2>Holidays This Week</h2>
+          <div className="weekly-holidays-scrollable">
+            {loading && weeklyHolidays.length === 0 ? (
+              <div className="loading">Loading weekly holidays...</div>
+            ) : error ? (
+              <div className="error">{error}</div>
+            ) : weeklyHolidays.length === 0 ? (
+              <div className="no-holidays">No holidays found this week</div>
+            ) : (
+              <div className="holiday-list">
+                {getGroupedHolidays().map((group, groupIndex) => (
+                  <div key={groupIndex} className="holiday-group">
+                    <h3>{formatDate(group.date)}</h3>
+                    <ul>
+                      {group.holidays.map((holiday, holidayIndex) => (
+                        <li key={holidayIndex}>
+                          <div className="holiday-name">{holiday.name}</div>
+                          <div className="holiday-local-name">
+                            {holiday.localName &&
+                              holiday.localName !== holiday.name &&
+                              `${holiday.localName}`}
+                          </div>
+                          <div className="holiday-country">
+                            <span className="country-flag">
+                              {getCountryFlagEmoji(holiday.countryCode)}
+                            </span>
+                            {getCountryNameFromCode(holiday.countryCode)}
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Country Search Button */}
+        <div className="country-search-container">
+          <button className="search-button" onClick={toggleCountrySearch}>
+            Search Holidays by Country
+          </button>
+
+          {/* Country Search Popup */}
+          {showCountrySearch && (
+            <div className="search-popup" ref={searchRef}>
+              <div className="search-header">
+                <h3>Select a Country</h3>
+                <button className="close-button" onClick={toggleCountrySearch}>
+                  ✕
+                </button>
+              </div>
+              <div className="search-input-container">
+                <input
+                  type="text"
+                  placeholder="Search countries..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="country-search"
+                  autoFocus
+                />
+              </div>
+              <div className="countries-list">
+                {countries.length === 0 ? (
+                  <div className="loading">Loading countries...</div>
+                ) : filteredCountries.length === 0 ? (
+                  <div className="no-results">No countries found</div>
+                ) : (
+                  filteredCountries.map((country) => (
+                    <div
+                      key={country.countryCode}
+                      className="country-item"
+                      onClick={() => handleCountrySelect(country)}
+                    >
+                      <span className="country-flag">
+                        {getCountryFlagEmoji(country.countryCode)}
+                      </span>
+                      {country.name}
+                    </div>
+                  ))
+                )}
+              </div>
             </div>
           )}
         </div>
       </div>
-
-      {/* Country Search Button */}
-      <div className="country-search-container">
-        <button className="search-button" onClick={toggleCountrySearch}>
-          Search Holidays by Country
-        </button>
-
-        {/* Country Search Popup */}
-        {showCountrySearch && (
-          <div className="search-popup" ref={searchRef}>
-            <div className="search-header">
-              <h3>Select a Country</h3>
-              <button className="close-button" onClick={toggleCountrySearch}>
-                ✕
-              </button>
-            </div>
-            <div className="search-input-container">
-              <input
-                type="text"
-                placeholder="Search countries..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="country-search"
-                autoFocus
-              />
-            </div>
-            <div className="countries-list">
-              {countries.length === 0 ? (
-                <div className="loading">Loading countries...</div>
-              ) : filteredCountries.length === 0 ? (
-                <div className="no-results">No countries found</div>
-              ) : (
-                filteredCountries.map((country) => (
-                  <div
-                    key={country.countryCode}
-                    className="country-item"
-                    onClick={() => handleCountrySelect(country)}
-                  >
-                    <span className="country-flag">
-                      {getCountryFlagEmoji(country.countryCode)}
-                    </span>
-                    {country.name}
-                  </div>
-                ))
-              )}
-            </div>
-          </div>
-        )}
-      </div>
-
       {/* Country Holidays Popup */}
       {showCountryPopup && selectedCountry && (
         <div className="country-popup-overlay" onClick={closeCountryPopup}>
@@ -357,7 +360,7 @@ const WorldCalendar = () => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 

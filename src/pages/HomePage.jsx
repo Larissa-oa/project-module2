@@ -1,11 +1,13 @@
 import React from "react";
 import "./HomePage.css";
-import community from "../images/community.png";
+import { Link } from "react-router-dom";
+
 import RadioPlayer from "../components/RadioPlayer";
 import ProverbCube from "../components/ProverbCube";
 import NewsSlider from "../components/NewsSlider";
 import CustomsCube from "../components/CustomsCube";
 import WorldCalendar from "../components/WorldCalendar";
+import Welcome from "../components/Welcome";
 
 const HomePage = () => {
   return (
@@ -13,6 +15,9 @@ const HomePage = () => {
       <main className="homepage">
         <div className="content-brand">
           <h1>App Name</h1>
+          <div className="welcome">
+            <Welcome />
+          </div>
         </div>
         {/* DIV1 */}
         <div className="div1">
@@ -26,9 +31,7 @@ const HomePage = () => {
 
         {/* DIV3 */}
         <div className="div3 customs-and-proverbs">
-          <h2 className="customs-header">Local Customs</h2>
           <CustomsCube />
-          <h2 className="proverbs-header">Proverbs</h2>
           <ProverbCube />
         </div>
 
@@ -38,7 +41,16 @@ const HomePage = () => {
         </div>
 
         {/* DIV5 */}
-        <div className="div5"></div>
+        <div className="div5">
+          <div className="social-links">
+            <Link to="/socialpage" className="social-page-link">
+              Social Page
+            </Link>
+            <Link to="/allevents" className="all-events-link">
+              All Events Page
+            </Link>
+          </div>
+        </div>
       </main>
     </>
   );

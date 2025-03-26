@@ -1,0 +1,24 @@
+.welcome-container {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  position: relative;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0); /* Transparent background */
+}
+
+.welcome-word {
+  font-size: 48px; /* Larger font for the word */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.welcome-language {
+  font-size: 24px; /* Smaller font for the language name */
+  color: #666;
+}

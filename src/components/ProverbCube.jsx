@@ -43,7 +43,7 @@ const ProverbCube = () => {
         const proverbsModule = await import("../assets/proverbs.json");
         const proverbsData = proverbsModule.default || [];
 
-        // Shuffle and limit proverbs for better performance
+        // Set shuffled proverbs
         setShuffledProverbs(shuffleArray(proverbsData));
         setIsLoading(false);
       } catch (err) {
