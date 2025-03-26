@@ -1,0 +1,140 @@
+.recipes-food-page-container {
+    background-color: #e9d8a6;
+    color: #001219;
+    padding: 30px;
+    font-family: 'Georgia', serif;
+    text-align: center;
+  }
+  
+  .recipes-food-page-container h1 {
+    color: #001219;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 0 20px;
+  }
+  
+  .food-page-subhead p {
+    font-size: 1.2rem;
+    color: #005f73;
+    font-style: italic;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+  }
+  
+  .recipes-food-recipe-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 20px 0;
+  }
+  
+  .recipes-food-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 260px;
+    height: 500px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .recipes-food-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .recipe-image-food-card {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+  
+  .recipe-card-country-info {
+    padding: 15px;
+    flex-grow: 1;
+  }
+  
+  .recipe-card-country-info h2 {
+    color: #005f73;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  .recipe-card-country-info h3 {
+    color: #94d2bd;
+    font-size: 1.2rem;
+    margin-top: 5px;
+  }
+  
+  .recipe-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px;
+    background-color: #94d2bd;
+    margin-top: auto;
+  }
+  
+  .recipe-buttons button {
+    background-color: #ca6702;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 40px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .recipe-buttons button:hover {
+    background-color: #bb3e03;
+  }
+  
+  .delete-btn {
+    background-color: #ae2012;
+  }
+  
+  .delete-btn:hover {
+    background-color: #bb3e03;
+  }
+  
+  #like-btn {
+    width: 50px;
+    height: 50px;
+    background-color: #e0e0e0e4;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  #like-btn img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  #like-btn:hover {
+    background-color: #bb3e03;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    z-index: 1;
+  }
+  
