@@ -92,5 +92,8 @@ const AllEventsPage = ({ events }) => {
     </div>
   );
 };
+  );
+};
 
+export default AllEventsPage;
 export default AllEventsPage;

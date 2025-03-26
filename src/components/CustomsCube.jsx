@@ -3,26 +3,26 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCube, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-cube";
-import "./ProverbCube.css";
+import "./CustomsCube.css";
 
-const ProverbCube = () => {
-  const [shuffledProverbs, setShuffledProverbs] = useState([]);
+const CustomsCube = () => {
+  const [shuffledCustoms, setShuffledCustoms] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   // Array of background colors for each slide
   const backgroundColors = [
-    "#FF6B6B",
-    "#4ECDC4",
-    "#FFB6C1",
-    "#D9B72E",
-    "#6B5B95",
-    "#88B04B",
-    "#92A8D1",
-    "#955251",
+    "#333333",
+    "#2E8B57",
+    "#D45D00",
+    "#1D1B2F",
+    "#800080",
+    "#1E90FF",
+    "#B22222",
+    "#E6B800",
   ];
 
-  // Function to shuffle and limit the proverbs array
+  // Function to shuffle the proverbs array
   const shuffleArray = (array) => {
     if (!Array.isArray(array)) return [];
 
@@ -36,15 +36,15 @@ const ProverbCube = () => {
 
   // Load proverbs on component mount
   useEffect(() => {
-    const loadProverbs = async () => {
+    const loadCustoms = async () => {
       try {
         setIsLoading(true);
         // Using dynamic import to load the JSON file
-        const proverbsModule = await import("../assets/proverbs.json");
-        const proverbsData = proverbsModule.default || [];
+        const customsModule = await import("../assets/customs.json");
+        const customsData = customsModule.default || [];
 
         // Set shuffled proverbs
-        setShuffledProverbs(shuffleArray(proverbsData));
+        setShuffledCustoms(shuffleArray(customsData));
         setIsLoading(false);
       } catch (err) {
         console.error("Failed to load proverbs:", err);
@@ -55,23 +55,23 @@ const ProverbCube = () => {
       }
     };
 
-    loadProverbs();
+    loadCustoms();
   }, []);
 
   if (isLoading) {
-    return <div className="proverb-cube-loading">Loading proverbs...</div>;
+    return <div className="customs-cube-loading">Loading customs...</div>;
   }
 
   if (error) {
-    return <div className="proverb-cube-error">{error}</div>;
+    return <div className="customs-cube-error">{error}</div>;
   }
 
-  if (shuffledProverbs.length === 0) {
-    return <div className="proverb-cube-error">No proverbs found.</div>;
+  if (shuffledCustoms.length === 0) {
+    return <div className="customs-cube-error">No customs found.</div>;
   }
 
   return (
-    <div className="proverb-cube-container">
+    <div className="customs-cube-container">
       <Swiper
         effect={"cube"}
         grabCursor={true}
@@ -90,20 +90,18 @@ const ProverbCube = () => {
         modules={[EffectCube, Autoplay]}
         className="mySwiper"
       >
-        {shuffledProverbs.map((item, index) => (
+        {shuffledCustoms.map((item, index) => (
           <SwiperSlide key={item.id || index}>
             <div
-              className="proverb-slide"
+              className="custom-slide"
               style={{
                 backgroundColor:
                   backgroundColors[index % backgroundColors.length],
               }}
             >
-              <div className="proverb-content">
-                <p className="proverb-text">
-                  {item.proverb || "Unknown proverb"}
-                </p>
-                <p className="proverb-country">
+              <div className="custom-content">
+                <p className="custom-text">{item.custom || "Unknown custom"}</p>
+                <p className="custom-country">
                   {item.country || "Unknown origin"}
                 </p>
               </div>
@@ -115,4 +113,4 @@ const ProverbCube = () => {
   );
 };
 
-export default ProverbCube;
+export default CustomsCube;

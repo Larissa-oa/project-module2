@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./SocialPage.css";
 import event from "../images/social.png";
@@ -37,12 +38,17 @@ const SocialPage = ({addEvent }) => {
        
         <div className="event-options">
           <div className="event-card-online">
+          <div className="event-card-online">
             <h2>Online Meetings</h2>
+            <button className="event-btn" onClick={() => openModal("Online")}>
+              Create Online Event
+            </button>
             <button className="event-btn" onClick={() => openModal("Online")}>
               Create Online Event
             </button>
           </div>
 
+          <div className="event-card-in-person">
           <div className="event-card-in-person">
             <h2>In-Person Meetups</h2>
             <button className="event-btn" onClick={() => openModal("In-Person")}>
@@ -54,6 +60,7 @@ const SocialPage = ({addEvent }) => {
        
         <div className="explore-events">
           <h2>Ready to Join?</h2>
+          <Link to="/allevents" className="explore-btn">
           <Link to="/allevents" className="explore-btn">
             Explore Open Events
           </Link>
