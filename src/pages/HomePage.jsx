@@ -1,6 +1,5 @@
 import React from "react";
 import "./HomePage.css";
-import community from "../images/community.png";
 import RadioPlayer from "../components/RadioPlayer";
 import ProverbCube from "../components/ProverbCube";
 

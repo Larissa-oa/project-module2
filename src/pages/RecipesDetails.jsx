@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import './RecipesDetails.css'
 
-const RecipesDetails = () => {
+const RecipesDetails = ({handleDelete}) => {
 
     const [recipe, setRecipe] = useState({})
     const { recipeId } = useParams()
@@ -38,7 +38,7 @@ const RecipesDetails = () => {
       </div>
       <div className="update-recipe-btn-section">
         <button>Update</button>
-        <button>Delete</button>
+        <button onClick={() => handleDelete(recipe.id)}>Delete</button>
       </div>
       </div>
       <Link to="/recipes">
