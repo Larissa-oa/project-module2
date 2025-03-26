@@ -2,7 +2,7 @@
     background-color: #e9d8a6;
     color: #001219;
     padding: 30px;
-    font-family: 'Georgia', serif;
+    font-family: 'Tahoma', sans-serif;
     text-align: center;
   }
   
@@ -17,10 +17,10 @@
   .food-page-subhead p {
     font-size: 1.2rem;
     color: #005f73;
-    font-style: italic;
     max-width: 800px;
     margin: 0 auto 40px;
     padding: 0 20px;
+    padding-top: 50px;
   }
   
   .recipes-food-recipe-list {
@@ -119,13 +119,8 @@
     right: 10px;
   }
   
-  #like-btn img {
-    width: 30px;
-    height: 30px;
-  }
-  
   #like-btn:hover {
-    background-color: #bb3e03;
+    background-color: #cfcece;
   }
   
   .overlay {
@@ -137,4 +132,52 @@
     background-color: rgba(255, 255, 255, 0.6);
     z-index: 1;
   }
+
+#like-btn {
+    background-color: rgba(255, 255, 255, 0.861);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+  }
+
+  #like-btn p {
+    display: none;
+  }
+  
+
+  #like-btn.liked {
+  background-color: #2A9D8F;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border: 1px solid white;
+  }
+
+  #like-btn.liked  img{
+display: none;
+  }
+  #like-btn.liked p {
+    display: block;
+    color: white;
+    font-size: 0.8;
+  }
+
+  #like-btn img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  
+  .search-bar-recipe-page {
+    margin: 20px 0;
+  }
+  
+  .search-bar-recipe-page input {
+    padding: 8px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
   

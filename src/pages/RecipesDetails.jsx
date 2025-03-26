@@ -4,10 +4,9 @@ import UpdateRecipeForm from "../components/UpdateRecipeForm";
 
 import "./RecipesDetails.css";
 
-const RecipesDetails = () => {
+const RecipesDetails = ({ handleDelete }) => {
   const [recipe, setRecipe] = useState({});
   const { recipeId } = useParams();
-  const [isUpdateFormOpen, setIsUpdateFormOpen] = useState(false);
 
   useEffect(() => {
     fetch(`http://localhost:4000/recipes/${recipeId}`)
@@ -39,17 +38,8 @@ const RecipesDetails = () => {
             </div>
           </div>
           <div className="update-recipe-btn-section">
-            <button
-              onClick={() => setIsUpdateFormOpen(true)}
-              className="update-recipe-button"
-            >
-              Edit Recipe
-            </button>
-
-            {isUpdateFormOpen && (
-              <UpdateRecipeForm onClose={() => setIsUpdateFormOpen(false)} />
-            )}
-            <button>Delete</button>
+            <button>Update</button>
+            <button onClick={() => handleDelete(recipe.id)}>Delete</button>
           </div>
         </div>
         <Link to="/recipes">
