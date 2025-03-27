@@ -52,10 +52,15 @@ body, html {
   font-size: 2.8rem;
   font-weight: bold;
   font-family: 'Boldonse', sans-serif;
+  text-transform: none;
   color: white; 
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
   margin-bottom: -15px;
   margin-top: 80px;
+}
+
+.homepage-title span{
+  color:#d1a432;
 }
 
 .welcome {
@@ -229,14 +234,14 @@ body, html {
   .div2.recipe-section {
     flex-direction: column;
     align-items: center;
-    padding-right: 20px; /* Reducing padding for small devices */
+    padding-right: 20px;
   }
 
   .recipe-intro-text {
-    max-width: 80%; /* Allowing more space for text */
+    max-width: 80%; 
     text-align: center;
-    margin-left: 0; /* Removing left margin */
-    margin-bottom: 20px; /* Adding some spacing at the bottom */
+    margin-left: 0;
+    margin-bottom: 20px; 
   }
 
   .recipe-cards-carousel {
@@ -281,49 +286,147 @@ body, html {
   }
 }
 
-
-
-/* Fun Section (News Slider) */
-.fun-section {
-  padding: 40px 20px;
-  background-color: #f4f4f9;
-}
-
-.fun-section .fun-content {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.fun-section .fun-content p {
-  font-size: 1.1rem;
-  color: #555;
-}
-
-/* Customs and Proverbs Section */
-.customs-and-proverbs {
+.div3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 30px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
   position: relative;
-  width: 100%;
-  padding: 60px 20px;
-  background-size: cover;
-  background-position: center;
-  color: white;
+  overflow: hidden;
+}
+
+.calendar-section-title {
+  font-size: 2rem;
+  font-family: 'Boldonse';
+  color: #2c3e50;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  animation: titleAnimation 1.5s ease-out;
+  text-align: center;
+  z-index: 2;
 }
 
-#text-diversity{
-  color: white;
-  z-index: 1000;
+@keyframes titleAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/*.customs-and-proverbs .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
+.fun-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 1;
-}*/
+  max-width: 1200px;
+  padding: 20px;
+  z-index: 2;
+}
+
+.text-intro-cube-culture {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%;
+  text-align: center;
+  background-color: #ffffff;
+  transition: transform 0.3s ease;
+  z-index: 2;
+  margin-top: -160px;
+  margin-left: 20px;
+}
+
+.text-intro-cube-culture:hover {
+  transform: translateY(-10px);
+}
+
+ p {
+  font-size: 1.1rem;
+  color: #7f7d7d;
+  line-height: 1.7;
+  font-weight: 500;
+  margin-top: 15px;
+  letter-spacing: 1px;
+  z-index: 100;
+}
+
+
+
+.world-calendar {
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.world-calendar:hover {
+  transform: translateY(-10px);
+}
+
+.customs-cube {
+  width: 100%;
+  max-width: 350px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.customs-cube:hover {
+  transform: translateY(-10px);
+}
+
+.flags-img {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  max-width: 420px;
+  opacity: 0.7;
+  z-index: 2;
+  transform: translateY(30px) translateX(30px);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.intro-div3{
+padding: 30px;
+}
+@media (max-width: 768px) {
+  .fun-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text-intro-cube-culture {
+    max-width: 80%;
+    
+  }
+
+  .world-calendar {
+    max-width: 90%;
+  }
+
+  .flags-img {
+    max-width: 80px;
+  }
+}
+
 
 /* Radio Player Section */
 .radio-player {

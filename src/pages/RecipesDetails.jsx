@@ -10,7 +10,7 @@ const RecipesDetails = ({ handleDelete }) => {
   const [isUpdateFormOpen, setIsUpdateFormOpen] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:4000/recipes/${recipeId}`)
+    fetch(`${API_URL}/recipes/${recipeId}`)
       .then((response) => {
         return response.json();
       })
@@ -31,7 +31,7 @@ const RecipesDetails = ({ handleDelete }) => {
           <div className="recipe-card-text-main">
             <h2>{recipe.name}</h2>
             <h3>{recipe.country}</h3>
-            <div className="recipe-information-instructions">
+           <div className="recipe-information-instructions">
   <ul>
     {recipe.ingredients.map((ingredient, index) => (
       <li key={index}>{ingredient}</li>

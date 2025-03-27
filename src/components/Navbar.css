@@ -1,78 +1,97 @@
-/* Navbar container with gradient background, fixed positioning, and shadow */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+}
+
 .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
-  width: 100%;
-  padding: 0 40px;
-  background: transparent; /* Light yellowish gradient */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  padding: 20px 40px;
+  background-color: #4d4d4d63;
+  color: white;
   position: sticky;
   top: 0;
-  z-index: 1000;
-  transition: all 0.3s ease-in-out; 
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px); /* Applies the blur effect */
+  -webkit-backdrop-filter: blur(10px);
 }
 
-/* Brand/logo image with fixed height */
+
 .navbar-brand img {
-  height: 80px; /* Adjust logo size */
-  transition: transform 0.3s ease-in-out; /* Smooth animation on hover */
+  height: 40px;
+  width: auto;
+  transition: all 0.3s ease;
 }
 
-/* Logo scaling effect on hover */
-.navbar-brand img:hover {
-  transform: scale(1.1); /* Slight zoom effect on hover */
+.brand-name-nav {
+  font-size: 28px;
+  font-weight: bold;
+  color: #f9a826;
+  letter-spacing: 2px;
+  margin-left: 20px;
+  transition: all 0.3s ease;
 }
 
-/* Navbar links container */
 .navbar-links {
   display: flex;
-  justify-content: space-around;
+  gap: 30px;
 }
 
-/* Navbar links styling */
-.nav-link, .recipes-page-link, .all-events-link {
-  color: grey;
+.nav-link {
+  color: #ddd;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 18px;
   font-weight: 500;
-  transition: color 0.3s, transform 0.3s ease-in-out;
-  padding: 10px 20px; /* Add padding for better clickable area */
-  border-radius: 30px; /* Rounded corners for the link */
-  display: inline-block;
+  position: relative;
+  padding: 10px 15px;
+  letter-spacing: 1px;
+  transition: all 0.4s ease;
 }
 
-/* Hover effect for links */
-.nav-link:hover, .recipes-page-link:hover, .all-events-link:hover {
-  color: #264653; /* Darker color on hover */
-  transform: translateY(-3px); /* Subtle lift on hover */
-  background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
+/* NavLink Hover Effect */
+.nav-link:hover {
+  color: #f9a826;
+  text-shadow: 0 0 8px rgba(255, 169, 38, 0.7), 0 0 20px rgba(255, 169, 38, 0.5);
 }
 
-/* Active link styling */
-.nav-link.active, .recipes-page-link.active, .all-events-link.active {
-  color: #264653; /* Highlight active link */
-  font-weight: 700;
+.nav-link:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #f9a826;
+  transition: width 0.3s ease, left 0.3s ease;
 }
 
-/* Mobile responsiveness */
+.nav-link:hover:before {
+  width: 100%;
+  left: 0;
+}
+
+ 
 @media (max-width: 768px) {
-  .navbar-container {
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px 10px;
-  }
-
   .navbar-links {
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    gap: 20px;
   }
+}
 
-  .nav-link, .recipes-page-link, .all-events-link {
-    font-size: 1.2rem;
-    padding: 12px 20px;
-    margin: 8px 0; /* Add margin between links */
+@media (min-width: 769px) {
+  .navbar-links {
+    display: flex;
+    gap: 30px;
   }
 }

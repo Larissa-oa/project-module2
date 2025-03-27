@@ -212,7 +212,6 @@ const WorldCalendar = () => {
   return (
     <>
       <div className="world-calendar-container">
-        <h1 className="main-title">World Holiday Calendar</h1>
 
         {/* Weekly Calendar */}
         <div className="weekly-calendar">

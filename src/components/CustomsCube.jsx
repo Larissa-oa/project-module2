@@ -12,15 +12,15 @@ const CustomsCube = () => {
 
   // Array of background colors for each slide
   const backgroundColors = [
-    "#333333",
-    "#2E8B57",
-    "#D45D00",
-    "#1D1B2F",
-    "#800080",
-    "#1E90FF",
-    "#B22222",
-    "#E6B800",
-  ];
+    "#001219",
+    "#0a9396",
+    "#94d2bd",
+    "#ee9b00",
+    "#ca6702",
+    "#ae2012",
+    "#ae2012",
+
+  ]
 
   // Function to shuffle the proverbs array
   const shuffleArray = (array) => {

@@ -10,6 +10,7 @@ import RecipeForm from "../components/RecipeForm";
 import RecipeCardsCarousel from "../components/RecipeCardsCarousel";
 import homepagevideo from '../images/homepage.mp4'
 import multicultural from "../images/multicultural.jpg.avif"
+import flags from "../images/flag.png"
 
 const HomePage = () => {
   const [isRecipeFormOpen, setIsRecipeFormOpen] = useState(false);
@@ -24,7 +25,7 @@ const HomePage = () => {
           </video>
           <div className="video-overlay"></div>
           <div className="video-content">
-            <h1 className="homepage-title">CommUnity</h1>
+            <h1 className="homepage-title">Comm<span classNAme="unity">Unity</span></h1>
             <div className="welcome">
               <Welcome />
             </div>
@@ -70,17 +71,24 @@ const HomePage = () => {
           </div>
 
             <div className="div3 fun-section">
+              <h3 className='calendar-section-title'>There's always a reason to celebrate!</h3>
             <div className="fun-content">
             <WorldCalendar />
+            <div className="text-intro-cube-culture">
+            <CustomsCube />
+            <div className="intro-div3">
+            <p>Who knew the world had so many reasons to celebrate? Holidays to quirky traditions, let us guide you through a global journey.</p>
             </div>
+            </div>
+            </div>
+            <img className="flags-img" src={flags} />
              </div>
 
           {/* Customs and Proverbs Section with Background */}
           <div className="div4 customs-and-proverbs" style={{ backgroundImage: "url('https://img.freepik.com/free-photo/people-collage-design_23-2148888277.jpg?t=st=1743081862~exp=1743085462~hmac=d3f7e7fe154be790b859986511bf9fa6f1bc7678b76ca1945c2f3b3230096af1&w=1380')" }}>
           <div className="vide-overlay"></div>
-         <h3 id="text-diversity">We are better together!</h3>
           </div>
-          <CustomsCube />
+       
           <ProverbCube />
           {/* Radio Player Section */}
           <div className="div5 radio-player">
