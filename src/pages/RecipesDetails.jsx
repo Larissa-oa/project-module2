@@ -11,6 +11,7 @@ const RecipesDetails = ({ handleDelete }) => {
   const [isUpdateFormOpen, setIsUpdateFormOpen] = useState(false);
 
   useEffect(() => {
+    fetch(`${API_URL}/recipes/${recipeId}`);
     fetch(`${API_URL}/recipes/${recipeId}`)
       .then((response) => {
         return response.json();

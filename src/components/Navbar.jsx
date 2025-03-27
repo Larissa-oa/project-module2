@@ -10,6 +10,7 @@ const Navbar = () => {
         <div className="navbar-brand">
           <img src={logo} alt="brand-logo" />
         </div>
+        <div className="brand-name-nav">CommUnity</div>
         <div className="navbar-links">
           <NavLink to="/" className="nav-link">
             Home
@@ -17,10 +18,10 @@ const Navbar = () => {
           <NavLink to="/about" className="nav-link">
             About
           </NavLink>
-          <NavLink to="/recipes" className="recipes-page-link">
+          <NavLink to="/recipes" className="nav-link">
             Recipes
           </NavLink>
-          <NavLink to="/upcomingevents" className="upcoming-events-link">
+          <NavLink to="/allevents" className="nav-link">
             Events
           </NavLink>
         </div>

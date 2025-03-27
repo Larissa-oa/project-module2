@@ -10,7 +10,7 @@ import RecipeForm from "../components/RecipeForm";
 import RecipeCardsCarousel from "../components/RecipeCardsCarousel";
 import homepagevideo from "../images/homepage.mp4";
 import multicultural from "../images/multicultural.jpg.avif";
-import EventSlider from "../components/EventSlider";
+import flags from "../images/flag.png";
 
 const HomePage = ({ upcomingEvents = [] }) => {
   const [isRecipeFormOpen, setIsRecipeFormOpen] = useState(false);
@@ -26,8 +26,7 @@ const HomePage = ({ upcomingEvents = [] }) => {
           <div className="video-overlay"></div>
           <div className="video-content">
             <h1 className="homepage-title">
-              <span className="comm">Comm</span>
-              <span className="unity">Unity</span>
+              Comm<span classNAme="unity">Unity</span>
             </h1>
             <div className="welcome">
               <Welcome />
@@ -96,9 +95,23 @@ const HomePage = ({ upcomingEvents = [] }) => {
           </div>
 
           <div className="div3 fun-section">
+            <h3 className="calendar-section-title">
+              There's always a reason to celebrate!
+            </h3>
             <div className="fun-content">
               <WorldCalendar />
+              <div className="text-intro-cube-culture">
+                <CustomsCube />
+                <div className="intro-div3">
+                  <p>
+                    Who knew the world had so many reasons to celebrate?
+                    Holidays to quirky traditions, let us guide you through a
+                    global journey.
+                  </p>
+                </div>
+              </div>
             </div>
+            <img className="flags-img" src={flags} />
           </div>
 
           {/* Customs and Proverbs Section with Background */}
@@ -110,13 +123,9 @@ const HomePage = ({ upcomingEvents = [] }) => {
             }}
           >
             <div className="vide-overlay"></div>
-            <h3 id="text-diversity">We are better together!</h3>
           </div>
-          <div className="cubes-container">
-            <CustomsCube />
-            <ProverbCube />
-          </div>
-          <EventSlider upcomingEvents={upcomingEvents} />
+
+          <ProverbCube />
           {/* Radio Player Section */}
           <div className="div5 radio-player-container">
             <div className="radio-text">
