@@ -93,8 +93,33 @@ form button:hover {
   transform: scale(1.05);
 }
 
-#time-form{
+#time-form {
   margin-bottom: 30px;
+}
+
+.image-upload-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.image-upload-container input[type="text"] {
+  flex-grow: 1;
+}
+
+.image-upload-container button {
+  width: auto;
+  padding: 12px 15px;
+  background: linear-gradient(45deg, #9b59b6, #3498db);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.image-upload-container button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 @media (max-width: 768px) {
@@ -113,6 +138,14 @@ form button:hover {
 
   .close-btn {
     font-size: 1.3rem;
+  }
+
+  .image-upload-container {
+    flex-direction: column;
+  }
+
+  .image-upload-container button {
+    width: 100%;
   }
 }
 

@@ -11,6 +11,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import AllEventsPage from "./pages/AllEventsPage";
 import axios from "axios";
 import RecipesDetails from "./pages/RecipesDetails";
+import { API_URL } from "./config/config.js"
 
 function App() {
   const [events, setEvents] = useState([]);
@@ -22,7 +23,7 @@ function App() {
   //API Call for the events
   useEffect(() => {
     axios
-      .get("http://localhost:4000/events")
+      .get(`${API_URL}/events`)
       .then((res) => {
         setEvents(res.data);
       })
@@ -35,7 +36,7 @@ function App() {
     setEvents((prevEvents) => [...prevEvents, newEvent]);
 
     axios
-      .post("http://localhost:4000/events", newEvent)
+      .post(`${API_URL}/events`, newEvent)
       .then((res) => {
         console.log("event add", res.data);
       })
@@ -43,10 +44,10 @@ function App() {
         console.log("error with post", error);
       });
   };
-  //API Call for the recipes
+//API Call for the recipes 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/recipes")
+      .get(`${API_URL}/recipes`)
       .then((res) => {
         setRecipes(res.data);
       })
@@ -59,7 +60,7 @@ function App() {
     setRecipes([...recipes, newRecipe]);
 
     axios
-      .post("http://localhost:4000/recipes", newRecipe)
+      .post(`${API_URL}/recipes`, newRecipe)
       .then((res) => {
         console.log("recipe add", res.data);
       })
@@ -73,9 +74,7 @@ function App() {
     const isAlreadyFavorite = favEvents.some((e) => e.id === id);
 
     if (isAlreadyFavorite) {
-      setFavEvents((prevFavourites) =>
-        prevFavourites.filter((e) => e.id !== id)
-      );
+      setFavEvents((prevFavourites) => prevFavourites.filter((e) => e.id !== id));
     } else {
       const favouriteEvent = events.find((e) => e.id === id);
       if (favouriteEvent) {
@@ -88,7 +87,7 @@ function App() {
     setFavEvents((prevFavourites) => prevFavourites.filter((e) => e.id !== id));
   };
 
-  // Favourite (IWantToTry!) button at FoodPage
+  // Favourite (IWantToTry!) button at FoodPage  
   const addToFavouritesRecipes = (id) => {
     const isAlreadyFavorite = favRecipes.some((e) => e.id === id);
 
@@ -107,18 +106,13 @@ function App() {
   };
 
   // Delete on CRUD - on FoodPage and detailsPage
-  function handleDelete(id) {
-    axios
-      .delete(`http://localhost:4000/recipes/${id}`)
-      .then((res) => {
-        setRecipes((prevRecipes) =>
-          prevRecipes.filter((recipe) => recipe.id !== id)
-        );
-        setFavRecipes((prevFavRecipes) =>
-          prevFavRecipes.filter((favRecipe) => favRecipe.id !== id)
-        );
-      })
-      .catch((err) => console.log(err));
+  function handleDelete(id)  {
+    axios.delete(`${API_URL}/recipes/${id}`)
+    .then((res) => {
+        setRecipes((prevRecipes) => prevRecipes.filter((recipe) => recipe.id !== id));
+      setFavRecipes((prevFavRecipes) => prevFavRecipes.filter((favRecipe) => favRecipe.id !== id))
+    })
+    .catch((err) => console.log(err))
   }
 
   return (
@@ -138,12 +132,8 @@ function App() {
             />
           }
         />
-        <Route
-          path="/socialpage"
-          element={<SocialPage addEvent={handleAddEvent} />}
-        />
+        <Route path="/socialpage" element={<SocialPage addEvent={handleAddEvent} />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/recipes" element={<FoodPage />} />
         <Route path="*" element={<NotFoundPage />} />
         <Route
           path="/allevents"
@@ -156,10 +146,7 @@ function App() {
             />
           }
         />
-        <Route
-          path="/recipes/:recipeId"
-          element={<RecipesDetails handleDelete={handleDelete} />}
-        />
+        <Route path="/recipes/:recipeId" element={<RecipesDetails  handleDelete={handleDelete} />} />
       </Routes>
       <Footer />
     </>

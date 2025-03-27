@@ -7,6 +7,7 @@ import "./RecipesDetails.css";
 const RecipesDetails = ({ handleDelete }) => {
   const [recipe, setRecipe] = useState({});
   const { recipeId } = useParams();
+  const [isUpdateFormOpen, setIsUpdateFormOpen] = useState(false);
 
   useEffect(() => {
     fetch(`http://localhost:4000/recipes/${recipeId}`)
@@ -31,14 +32,29 @@ const RecipesDetails = ({ handleDelete }) => {
             <h2>{recipe.name}</h2>
             <h3>{recipe.country}</h3>
             <div className="recipe-information-instructions">
-              <ul>
-                <p>{recipe.ingredients}</p>
-              </ul>
-              <p>{recipe.instructions}</p>
-            </div>
+  <ul>
+    {recipe.ingredients.map((ingredient, index) => (
+      <li key={index}>{ingredient}</li>
+    ))}
+  </ul>
+  <ul>
+    {recipe.instructions.map((instruction, index) => (
+      <li key={index}>{instruction}</li>
+    ))}
+  </ul>
+</div>
           </div>
           <div className="update-recipe-btn-section">
-            <button>Update</button>
+            <button
+              onClick={() => setIsUpdateFormOpen(true)}
+              className="update-recipe-button"
+            >
+              Edit Recipe
+            </button>
+
+            {isUpdateFormOpen && (
+              <UpdateRecipeForm onClose={() => setIsUpdateFormOpen(false)} />
+            )}
             <button onClick={() => handleDelete(recipe.id)}>Delete</button>
           </div>
         </div>

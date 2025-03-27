@@ -3,11 +3,12 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  margin-left: -20px;
 }
 
 .recipe-swiper {
   width: 240px;
-  height: 320px;
+  height: 380px;
 }
 
 .recipe-card {
@@ -16,51 +17,50 @@
   align-items: center;
   justify-content: center;
   border-radius: 18px;
-  font-size: 22px;
-  font-weight: bold;
+  font-size: 20px;
   color: #fff;
-  height: 320px !important;
+  height: 380px !important;
   width: 240px !important;
 }
 
 .recipe-card:nth-child(1n) {
-  background-color: rgb(206, 17, 17);
+  background-color: #ee9b00;
 }
 
 .recipe-card:nth-child(2n) {
-  background-color: rgb(0, 140, 255);
+  background-color: #0a9396;
 }
 
 .recipe-card:nth-child(3n) {
-  background-color: rgb(10, 184, 111);
+  background-color: #ae2012
 }
 
 .recipe-card:nth-child(4n) {
-  background-color: rgb(211, 122, 7);
+  background-color: #005f73;
 }
 
 .recipe-card:nth-child(5n) {
-  background-color: rgb(118, 163, 12);
+  background-color: #ca6702;
 }
 
 .recipe-card:nth-child(6n) {
-  background-color: rgb(180, 10, 47);
+  background-color: #e9d8a6;
 }
 
 .recipe-card:nth-child(7n) {
-  background-color: rgb(35, 99, 19);
+  background-color: #94d2bd;
 }
 
 .recipe-card:nth-child(8n) {
-  background-color: rgb(0, 68, 255);
+  background-color: #001219;
 }
 
 .recipe-card:nth-child(9n) {
-  background-color: rgb(218, 12, 218);
+  background-color: #ee9b00;
 }
 
 .recipe-card:nth-child(10n) {
-  background-color: rgb(54, 94, 77);
+  background-color: #ae2012;
 }
 
 .recipe-card-image {
@@ -76,4 +76,5 @@
   text-align: center;
   padding: 10px 0;
   color: #fff;
+  font-size: 1.1rem;
 }

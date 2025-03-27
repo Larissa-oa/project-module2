@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { uploadToCloudinary } from "../utils/cloudinaryConfig";
 import "./UpdateRecipeForm.css";
 
 const UpdateRecipeForm = ({ onClose }) => {
@@ -14,6 +15,8 @@ const UpdateRecipeForm = ({ onClose }) => {
     country: "",
   });
 
+  const [imagePreview, setImagePreview] = useState("");
+  const [isUploading, setIsUploading] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -35,6 +38,7 @@ const UpdateRecipeForm = ({ onClose }) => {
             recipeData.instructions.length > 0 ? recipeData.instructions : [""],
           country: recipeData.country,
         });
+        setImagePreview(recipeData.image);
         setIsLoading(false);
       } catch (error) {
         console.error("Error fetching recipe:", error);
@@ -84,6 +88,41 @@ const UpdateRecipeForm = ({ onClose }) => {
       ...formData,
       instructions: [...formData.instructions, ""],
     });
+  };
+
+  // URL Image Preview Handler
+  const handleUrlPreview = () => {
+    if (formData.image) {
+      setFormData((prev) => ({
+        ...prev,
+        image: formData.image,
+      }));
+      setImagePreview(formData.image);
+    }
+  };
+
+  // Cloudinary image upload handler
+  const handleImageUpload = async (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    setIsUploading(true);
+
+    try {
+      const uploadedImageUrl = await uploadToCloudinary(file);
+
+      // Update form data with Cloudinary image URL
+      setFormData((prev) => ({
+        ...prev,
+        image: uploadedImageUrl,
+      }));
+      setImagePreview(uploadedImageUrl);
+      setIsUploading(false);
+    } catch (error) {
+      console.error("Image upload error:", error);
+      alert("Failed to upload image. Please try again.");
+      setIsUploading(false);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -214,15 +253,53 @@ const UpdateRecipeForm = ({ onClose }) => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="image">Image URL:</label>
-              <input
-                type="text"
-                id="image"
-                name="image"
-                value={formData.image}
-                onChange={handleChange}
-                required
-              />
+              <label>Image</label>
+              <p>Enter a URL</p>
+              <div className="image-upload-container">
+                <input
+                  type="text"
+                  id="image"
+                  name="image"
+                  value={formData.image}
+                  onChange={handleChange}
+                  placeholder="Paste image URL here"
+                />
+                <button
+                  type="button"
+                  onClick={handleUrlPreview}
+                  disabled={!formData.image}
+                >
+                  Preview your URL image
+                </button>
+              </div>
+
+              <p>Or</p>
+              <div className="file-upload-container">
+                <input
+                  type="file"
+                  id="imageUpload"
+                  accept="image/*"
+                  onChange={handleImageUpload}
+                  style={{ display: "none" }}
+                />
+                <button
+                  type="button"
+                  onClick={() => document.getElementById("imageUpload").click()}
+                  disabled={isUploading}
+                >
+                  {isUploading ? "Uploading..." : "Upload Image"}
+                </button>
+              </div>
+
+              {imagePreview && (
+                <div className="image-preview">
+                  <img
+                    src={imagePreview}
+                    alt="Preview"
+                    style={{ maxWidth: "100%", marginTop: "10px" }}
+                  />
+                </div>
+              )}
             </div>
 
             <div className="form-group">

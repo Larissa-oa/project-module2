@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
+import ReactTimeZoneSelect from "react-timezone-select";
+import { uploadToCloudinary } from "../utils/cloudinaryConfig";
 import "./EventForm.css";
 
 const EventForm = ({ eventType, addEvent, closeForm }) => {
@@ -16,9 +18,62 @@ const EventForm = ({ eventType, addEvent, closeForm }) => {
     eventImage: "",
   });
 
+  // State for image upload
+  const [imagePreview, setImagePreview] = useState("");
+  const [isUploading, setIsUploading] = useState(false);
+
+  // Automatically detect user's timezone on component mount
+  useEffect(() => {
+    const defaultTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    setFormData((prev) => ({ ...prev, eventTimezone: defaultTimezone }));
+  }, []);
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
+  };
+
+  // Handle timezone change from react-timezone-select
+  const handleTimezoneChange = (selectedTimezone) => {
+    setFormData((prev) => ({
+      ...prev,
+      eventTimezone: selectedTimezone.value,
+    }));
+  };
+
+  // URL Image Preview Handler
+  const handleUrlPreview = () => {
+    if (formData.eventImage) {
+      setFormData((prev) => ({
+        ...prev,
+        eventImage: formData.eventImage,
+      }));
+      setImagePreview(formData.eventImage);
+    }
+  };
+
+  // Cloudinary image upload handler
+  const handleImageUpload = async (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    setIsUploading(true);
+
+    try {
+      const uploadedImageUrl = await uploadToCloudinary(file);
+
+      // Update form data with Cloudinary image URL
+      setFormData((prev) => ({
+        ...prev,
+        eventImage: uploadedImageUrl,
+      }));
+      setImagePreview(uploadedImageUrl);
+      setIsUploading(false);
+    } catch (error) {
+      console.error("Image upload error:", error);
+      alert("Failed to upload image. Please try again.");
+      setIsUploading(false);
+    }
   };
 
   const handleSubmit = (event) => {
@@ -41,7 +96,7 @@ const EventForm = ({ eventType, addEvent, closeForm }) => {
       date: formData.eventDate,
       time: formData.eventTime,
       description: formData.eventDescription,
-      location: formData.eventType,
+      location: formData.eventLocation,
       city: formData.eventCity,
       address: formData.eventAddress,
       link: formData.eventLink || "",
@@ -69,6 +124,9 @@ const EventForm = ({ eventType, addEvent, closeForm }) => {
     closeForm();
   };
 
+  // Get today's date in YYYY-MM-DD format for min attribute
+  const today = new Date().toISOString().split("T")[0];
+
   return (
     <form onSubmit={handleSubmit} className="event-form">
       <h2 className="title-form">{`Create ${eventType} Event`}</h2>
@@ -93,6 +151,7 @@ const EventForm = ({ eventType, addEvent, closeForm }) => {
           name="eventDate"
           value={formData.eventDate}
           onChange={handleChange}
+          min={today}
           required
         />
       </div>
@@ -131,14 +190,53 @@ const EventForm = ({ eventType, addEvent, closeForm }) => {
       </div>
 
       <div className="form-group">
-        <label htmlFor="eventImage">Image</label>
-        <input
-          type="text"
-          id="eventImage"
-          name="eventImage"
-          value={formData.eventImage}
-          onChange={handleChange}
-        />
+        <label>Image</label>
+        <p>Enter a URL</p>
+        <div className="image-upload-container">
+          <input
+            type="text"
+            id="eventImage"
+            name="eventImage"
+            value={formData.eventImage}
+            onChange={handleChange}
+            placeholder="Paste image URL here"
+          />
+          <button
+            type="button"
+            onClick={handleUrlPreview}
+            disabled={!formData.eventImage}
+          >
+            Preview your URL image
+          </button>
+        </div>
+
+        <p>Or</p>
+        <div className="file-upload-container">
+          <input
+            type="file"
+            id="imageUpload"
+            accept="image/*"
+            onChange={handleImageUpload}
+            style={{ display: "none" }}
+          />
+          <button
+            type="button"
+            onClick={() => document.getElementById("imageUpload").click()}
+            disabled={isUploading}
+          >
+            {isUploading ? "Uploading..." : "Upload Image"}
+          </button>
+        </div>
+
+        {imagePreview && (
+          <div className="image-preview">
+            <img
+              src={imagePreview}
+              alt="Preview"
+              style={{ maxWidth: "100%", marginTop: "10px" }}
+            />
+          </div>
+        )}
       </div>
 
       {eventType !== "Online" && (
@@ -186,13 +284,9 @@ const EventForm = ({ eventType, addEvent, closeForm }) => {
 
       <div className="form-group" id="time-form">
         <label htmlFor="eventTimezone">Timezone</label>
-        <input
-          type="text"
-          id="eventTimezone"
-          name="eventTimezone"
+        <ReactTimeZoneSelect
           value={formData.eventTimezone}
-          onChange={handleChange}
-          required
+          onChange={handleTimezoneChange}
         />
       </div>
 

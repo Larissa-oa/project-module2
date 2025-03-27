@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./FoodPage.css";
 import like from "../images/iwillgo.png";
+import peoplefood from "../images/foodpage.avif"
 
 const FoodPage = ({
   recipes,
@@ -32,17 +33,19 @@ const FoodPage = ({
 
   return (
     <div className="recipes-food-page-container">
-      <h1>Nothing brings people together like food</h1>
-      <div className="food-page-subhead">
-        <p>
-          We've gathered a tasty collection of recipes from all over the world for you to try, enjoy,
-          and share. Feel free to tweak them to match your taste (or your grandma's secret recipe) —
-          the most important part is to have fun and explore new flavors! Let's get cooking and connect
-          through food!
-        </p>
-      </div>
-
- 
+    <h1>Nothing brings people together like food</h1>
+    <div className="image-people-dinning">
+      <img src={peoplefood} alt="People dining" />
+    </div>
+    <div className="food-page-subhead">
+      <p>
+        We've gathered a tasty collection of recipes from all over the world for you to try, enjoy,
+        and share. Feel free to tweak them to match your taste (or your grandma's secret recipe) —
+        the most important part is to have fun and explore new flavors! Let's get cooking and connect
+        through food!
+      </p>
+    </div>
+  
       <div className="search-bar-recipe-page">
         <label>
           Search the perfect recipe for you:

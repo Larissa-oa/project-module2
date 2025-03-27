@@ -4,13 +4,14 @@
   justify-content: space-between;
   align-items: center;
   height: 100px;
+  width: 100%;
   padding: 0 40px;
-  background: linear-gradient(45deg, #eadcb2, #ccc); /* Light yellowish gradient */
+  background: transparent; /* Light yellowish gradient */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: all 0.3s ease-in-out; /* Smooth transition for background change */
+  transition: all 0.3s ease-in-out; 
 }
 
 /* Brand/logo image with fixed height */
@@ -28,12 +29,11 @@
 .navbar-links {
   display: flex;
   justify-content: space-around;
-  width: 40%;
 }
 
 /* Navbar links styling */
 .nav-link, .recipes-page-link, .all-events-link {
-  color: white;
+  color: grey;
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 500;

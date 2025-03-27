@@ -3,12 +3,13 @@ import "./HomePage.css";
 import { Link } from "react-router-dom";
 import RadioPlayer from "../components/RadioPlayer";
 import ProverbCube from "../components/ProverbCube";
-import NewsSlider from "../components/NewsSlider";
 import CustomsCube from "../components/CustomsCube";
 import WorldCalendar from "../components/WorldCalendar";
 import Welcome from "../components/Welcome";
 import RecipeForm from "../components/RecipeForm";
 import RecipeCardsCarousel from "../components/RecipeCardsCarousel";
+import homepagevideo from '../images/homepage.mp4'
+import multicultural from "../images/multicultural.jpg.avif"
 
 const HomePage = () => {
   const [isRecipeFormOpen, setIsRecipeFormOpen] = useState(false);
@@ -16,61 +17,92 @@ const HomePage = () => {
   return (
     <>
       <main className="homepage">
-        <div className="content-brand">
-          <h1>App Name</h1>
-          <div className="welcome">
-            <Welcome />
+        <div className="video-section">
+          <video className="homepage-video" autoPlay loop muted>
+            <source src={homepagevideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div className="video-overlay"></div>
+          <div className="video-content">
+            <h1 className="homepage-title">CommUnity</h1>
+            <div className="welcome">
+              <Welcome />
+            </div>
           </div>
         </div>
-        {/* DIV1 */}
-        <div className="div1">
-          <WorldCalendar />
 
-          {/* Add a Recipe Button */}
-          <div className="add-recipe-section">
-            <button
-              onClick={() => setIsRecipeFormOpen(true)}
-              className="add-recipe-button"
-            >
-              Add a Recipe
-            </button>
+     
+        <div className="homepage-web-intro">
+          <p>Welcome to <b>CommUnity</b> – Here you can explore a collection of recipes that anyone can personalize to their taste, discover exciting events happening near and far, and dive into the beats that bring us all together through music. We’re on a mission to make the world feel a little smaller, friendlier, and full of vibrant cultures from every corner of the globe. Join us, share your flavor, your story, and your rhythm.</p>
+          <hr />
+        </div>
+
+        {/* Content Section */}
+        <div className="content">
+
+          {/* Featured Section with Background Image */}
+          <div className="div1 featured-section" style={{ backgroundImage: "url('/images/featured-background.jpg')" }}>
+            <div className="text-content">
+              <h2>Explore the World</h2>
+              <p>From recipes to customs, and the latest news, dive deep into cultures around the world.</p>
+            </div>
           </div>
 
-          {/* Render the RecipeForm as a popup when isRecipeFormOpen is true */}
-          {isRecipeFormOpen && (
-            <RecipeForm onClose={() => setIsRecipeFormOpen(false)} />
-          )}
+          {/* Recipe Section */}
+          <div className="div2 recipe-section">
+            <div className="recipe-intro-text">
+            <h2 className="section-title">Recipes from Around the World</h2>
+            <p> "Nothing brings people together like food! Dive into our global recipe collection and share your own secret dish with the world. Let's cook up some connections!"</p>
+  
+            <div className="add-recipe-section">
+              <button onClick={() => setIsRecipeFormOpen(true)} id="add-recipe-button">
+                Add you own recipe! 
+              </button>
+              <Link to="/recipespage">
+              <button id="add-recipe-button">Check our recipe page</button>
+              </Link>
+              </div>
+            </div>
+            {isRecipeFormOpen && (
+              <RecipeForm onClose={() => setIsRecipeFormOpen(false)} />
+            )}
+            <RecipeCardsCarousel />
+          </div>
 
-          <RecipeCardsCarousel />
-        </div>
+            <div className="div3 fun-section">
+            <div className="fun-content">
+            <WorldCalendar />
+            </div>
+             </div>
 
-        {/* DIV2 */}
-        <div className="div2 news-slider">
-          <NewsSlider />
-        </div>
-
-        {/* DIV3 */}
-        <div className="div3 customs-and-proverbs">
+          {/* Customs and Proverbs Section with Background */}
+          <div className="div4 customs-and-proverbs" style={{ backgroundImage: "url('https://img.freepik.com/free-photo/people-collage-design_23-2148888277.jpg?t=st=1743081862~exp=1743085462~hmac=d3f7e7fe154be790b859986511bf9fa6f1bc7678b76ca1945c2f3b3230096af1&w=1380')" }}>
+          <div className="vide-overlay"></div>
+         <h3 id="text-diversity">We are better together!</h3>
+          </div>
           <CustomsCube />
           <ProverbCube />
-        </div>
-
-        {/* DIV4 */}
-        <div className="div4 radio-player">
-          <RadioPlayer />
-        </div>
-
-        {/* DIV5 */}
-        <div className="div5">
-          <div className="social-links">
-            <Link to="/socialpage" className="social-page-link">
-              Social Page
-            </Link>
-            <Link to="/allevents" className="all-events-link">
-              All Events Page
-            </Link>
-            <Link to="/recipes">Recipes</Link>
+          {/* Radio Player Section */}
+          <div className="div5 radio-player">
+            <h3 className="section-title">Tune In</h3>
+            <RadioPlayer />
           </div>
+
+          {/* Social Links */}
+          <div className="div6 social-links">
+            <div className="links-container">
+              <Link to="/socialpage" className="social-page-link">
+                Social Page
+              </Link>
+              <Link to="/allevents" className="all-events-link">
+                All Events Page
+              </Link>
+              <Link to="/recipes" className="recipes-link">
+                Recipes
+              </Link>
+            </div>
+          </div>
+
         </div>
       </main>
     </>
