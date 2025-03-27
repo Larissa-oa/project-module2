@@ -4,6 +4,7 @@ import onlineevent from "../images/on.jpg";
 import inpersonevent from "../images/person.jpg"
 import share from "../images/share.png"
 import countmein from "../images/iwillgo.png"
+import eventsintroimg from "../images/eventvideo2.mp4"
 
 const AllEventsPage = ({ events, favEvents, addToFavourites, removeFavourite }) => {
 
@@ -25,11 +26,21 @@ const AllEventsPage = ({ events, favEvents, addToFavourites, removeFavourite }) 
 
   return (
     <div className="all-events-container">
-    <h1>See What's Going On!</h1>
-
-    
-    <label>
-      Search the perfect event for you:
+      <div className="header-container">
+    <h1 className="h1-all-events-page">See What's Going On!</h1>
+    <h3 className="p-all-events">We are here to make the world a little smaller. <br />Find your next <b>online</b> or <b>in-person</b> event.</h3>
+    </div>
+    <div className="event-intro-video" >
+        <video autoPlay muted loop width="100%">
+          <source src={eventsintroimg} type="video/mp4" />
+         Your browser does not support the video tag.
+        </video>
+      </div>
+<div className="video-overlay"></div>
+<hr />
+<div>
+      <label>
+      <p className="p-label-all-events">Search the perfect event for you:</p>
       <input
         type="text"
         placeholder="Search events"
@@ -37,7 +48,7 @@ const AllEventsPage = ({ events, favEvents, addToFavourites, removeFavourite }) 
         value={searchTerm}
       />
     </label>
-
+      </div>
 <div className="all-events-page-events-list">
   {filteredEvents.length === 0 ? (
     <p>No events available matching your search. Create one! Let's get together!</p>
