@@ -1,7 +1,11 @@
 .radio-container {
-  width: 22.5vw;
-  height:32vw;
-  background: linear-gradient(45deg, #333333, #2a2a2a);
+  width: 35vw;
+  height: 35vw;
+  /* background: linear-gradient(45deg, #333333, #2a2a2a); */
+  background-image: url("../images/on-air-radio.jpg");
+  background-size: cover; /* Makes it fill the container */
+  background-position: center;
+  background-repeat: no-repeat;
   color: white;
   padding: 15px;
   border-radius: 20px;
@@ -14,6 +18,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 240px;
 }
 
 .station-info {
@@ -61,10 +66,13 @@
   align-items: center;
   padding: 15px; /* Increased padding */
   cursor: pointer;
+  color: black;
+  background-color: rgb(211, 216, 214);
+  border: 1px solid black;
 }
 
 .station-item:hover {
-  background: #555;
+  background: #7a7979;
 }
 
 .station-logo {
@@ -95,6 +103,10 @@
 
 .country-list {
   width: 100%;
+}
+
+.country-item {
+  color: black;
 }
 
 .close-button {

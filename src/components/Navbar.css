@@ -11,7 +11,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: all 0.3s ease-in-out; 
+  transition: all 0.3s ease-in-out;
 }
 
 /* Brand/logo image with fixed height */
@@ -32,7 +32,9 @@
 }
 
 /* Navbar links styling */
-.nav-link, .recipes-page-link, .all-events-link {
+.nav-link,
+.recipes-page-link,
+.upcoming-events-link {
   color: grey;
   text-decoration: none;
   font-size: 1.1rem;
@@ -44,14 +46,18 @@
 }
 
 /* Hover effect for links */
-.nav-link:hover, .recipes-page-link:hover, .all-events-link:hover {
+.nav-link:hover,
+.recipes-page-link:hover,
+.upcoming-events-link:hover {
   color: #264653; /* Darker color on hover */
   transform: translateY(-3px); /* Subtle lift on hover */
   background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
 }
 
 /* Active link styling */
-.nav-link.active, .recipes-page-link.active, .all-events-link.active {
+.nav-link.active,
+.recipes-page-link.active,
+.upcoming-events-link.active {
   color: #264653; /* Highlight active link */
   font-weight: 700;
 }
@@ -70,7 +76,9 @@
     align-items: center;
   }
 
-  .nav-link, .recipes-page-link, .all-events-link {
+  .nav-link,
+  .recipes-page-link,
+  .upcoming-events-link {
     font-size: 1.2rem;
     padding: 12px 20px;
     margin: 8px 0; /* Add margin between links */

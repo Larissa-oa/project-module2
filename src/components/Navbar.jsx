@@ -18,10 +18,10 @@ const Navbar = () => {
             About
           </NavLink>
           <NavLink to="/recipes" className="recipes-page-link">
-          Recipes
+            Recipes
           </NavLink>
-          <NavLink to="/allevents" className="all-events-link">
-          Events
+          <NavLink to="/upcomingevents" className="upcoming-events-link">
+            Events
           </NavLink>
         </div>
       </nav>

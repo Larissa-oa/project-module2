@@ -1,7 +1,8 @@
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   overflow-x: hidden;
   height: 100%;
 }
@@ -9,7 +10,7 @@ body, html {
 .h1-all-events-page {
   text-align: center;
   font-size: 2.5rem;
-  font-family: 'Boldonse', sans-serif;
+  font-family: "Boldonse", sans-serif;
   color: white;
   text-transform: uppercase;
   font-weight: 700;
@@ -125,7 +126,7 @@ body, html {
 .event-card {
   flex: 0 0 auto;
   margin-bottom: 20px;
-  width:65%;
+  width: 65%;
   background-color: #fff;
   padding: 15px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
@@ -155,7 +156,8 @@ body, html {
   border: 1px solid white;
 }
 
-.event-when p, .event-where p {
+.event-when p,
+.event-where p {
   margin: 5px 0;
   color: #333;
   font-size: 0.8rem;
@@ -163,13 +165,14 @@ body, html {
   box-sizing: border-box;
 }
 
-.event-when, .event-where {
+.event-when,
+.event-where {
   margin-right: 15px;
 }
 
 .option1 {
   background: rgb(237, 237, 237);
-  border: 3px solid #2A9D8F;
+  border: 3px solid #2a9d8f;
   border-radius: 5px;
   width: 100%;
   color: #fff;
@@ -177,7 +180,8 @@ body, html {
   padding: 10px;
 }
 
-.option1 h3, .option1 p {
+.option1 h3,
+.option1 p {
   color: #fff;
   text-align: center;
 }
@@ -206,7 +210,8 @@ body, html {
   border-radius: 5px;
 }
 
-.option2 h3, .option2 p {
+.option2 h3,
+.option2 p {
   color: #333;
   text-align: center;
 }
@@ -258,7 +263,8 @@ body, html {
   justify-content: center;
 }
 
-.go-back-events, .past-events-btn {
+.past-events-btn,
+.back-social-btn {
   background-color: #264653;
   color: #fff;
   font-size: 0.9rem;
@@ -275,12 +281,14 @@ body, html {
   text-transform: uppercase;
 }
 
-.go-back-events:hover, .past-events-btn:hover {
-  background-color: #2A9D8F;
+.past-events-btn:hover,
+.back-social-btn:hover {
+  background-color: #2a9d8f;
   transform: translateY(-5px) scale(1.05);
 }
 
-.go-back-events:focus, .past-events-btn:focus {
+.go-back-events:focus,
+.past-events-btn:focus {
   outline: none;
 }
 
@@ -323,7 +331,7 @@ input[type="text"]::placeholder {
 
 .p-label-all-events {
   text-align: center;
-  font-family: 'boldonse', sans-serif;
+  font-family: "boldonse", sans-serif;
   font-size: 1.1rem;
   margin-top: 80px;
   color: #264653;
@@ -379,7 +387,10 @@ input[type="text"]::placeholder {
   margin-bottom: 10px;
 }
 
-.title-of-event, .event-when, .event-where, .button-events-like-share {
+.title-of-event,
+.event-when,
+.event-where,
+.button-events-like-share {
   width: 96%;
 }
 
@@ -398,9 +409,9 @@ input[type="text"]::placeholder {
 }
 
 .countmein-event-btn.favourited {
-  background-color: #2A9D8F;
+  background-color: #2a9d8f;
   color: #fff;
-  border-color: #2A9D8F;
+  border-color: #2a9d8f;
   font-size: 0.8rem;
   font-weight: bold;
 }
@@ -454,7 +465,8 @@ input[type="text"]::placeholder {
     width: 85%;
   }
 
-  .go-back-events, .past-events-btn {
+  .go-back-events,
+  .past-events-btn {
     padding: 12px 20px;
     font-size: 0.8rem;
   }
@@ -465,7 +477,7 @@ input[type="text"]::placeholder {
 }
 
 @media (max-width: 868px) {
-  .p-all-events { 
+  .p-all-events {
     display: none;
   }
 }

@@ -1,10 +1,11 @@
 /* General Styles */
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: white;
-  color: #f5f5f5; 
+  color: #f5f5f5;
   height: 100%;
 }
 
@@ -19,7 +20,7 @@ body, html {
   margin-top: -100px;
   position: relative;
   width: 100%;
-  height: 50vw; 
+  height: 30vw;
   overflow: hidden;
 }
 
@@ -49,13 +50,22 @@ body, html {
 }
 
 .homepage-title {
-  font-size: 2.8rem;
-  font-weight: bold;
-  font-family: 'Boldonse', sans-serif;
-  color: white; 
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  font-size: 5.5rem;
+  font-family: "Overpass", sans-serif;
+  font-weight: 800;
+  text-transform: none;
+  /* font-family: "Boldonse", sans-serif; */
+  text-shadow: 8px 8px 8px rgba(0, 0, 0, 0.7);
   margin-bottom: -15px;
   margin-top: 80px;
+}
+
+.comm {
+  color: aqua;
+}
+
+.unity {
+  color: white;
 }
 
 .welcome {
@@ -122,12 +132,13 @@ body, html {
 .text-content p {
   font-size: 1.1rem;
   margin-bottom: 25px;
+  color: rgb(41, 41, 41);
 }
 
 /* Recipe Section */
 .div2.recipe-section {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
   padding: 40px 30px;
   background-color: #f9f9f9;
@@ -151,7 +162,7 @@ body, html {
 .recipe-intro-text .section-title {
   font-size: 2rem;
   font-weight: bold;
-  color: #2A9D8F;
+  color: #2a9d8f;
   margin-bottom: 15px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -168,17 +179,17 @@ body, html {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 20px;
-  margin-left: 35px;
+  margin-top: 120px;
+  margin-left: 75px;
   width: 100%;
-  position: absolute;
+  position: relative;
   bottom: 55px;
   left: 50%;
   transform: translateX(-50%);
 }
 
 #add-recipe-button {
-  background: linear-gradient(135deg, #2A9D8F, #555);
+  background: linear-gradient(135deg, #2a9d8f, #555);
   color: white;
   padding: 15px 30px;
   border: 1px solid white;
@@ -194,7 +205,7 @@ body, html {
 }
 
 #add-recipe-button:hover {
-  background: linear-gradient(135deg, #555, #2A9D8F);
+  background: linear-gradient(135deg, #555, #2a9d8f);
   transform: scale(1.05);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
@@ -209,6 +220,34 @@ body, html {
   width: 100%;
   height: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cubes-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.radio-player-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.radio-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 100px;
+  max-width: 500px;
+}
+
+.radio-text h3 {
+  font-size: 3rem;
+}
+.radio-text p {
+  font-size: 1.8rem;
+  color: #555;
+  text-align: center;
 }
 
 @media (max-width: 1024px) {
@@ -240,7 +279,7 @@ body, html {
   }
 
   .recipe-cards-carousel {
-    max-width: 90%; 
+    max-width: 90%;
     margin-top: 20px;
   }
 
@@ -253,7 +292,7 @@ body, html {
   }
 
   #add-recipe-button {
-    width: 200px; 
+    width: 200px;
     margin-bottom: 10px;
   }
 
@@ -268,7 +307,7 @@ body, html {
   }
 
   .recipe-intro-text p {
-    font-size: 1rem; 
+    font-size: 1rem;
   }
 
   #add-recipe-button {
@@ -280,8 +319,6 @@ body, html {
     margin-top: 20px;
   }
 }
-
-
 
 /* Fun Section (News Slider) */
 .fun-section {
@@ -310,7 +347,7 @@ body, html {
   text-align: center;
 }
 
-#text-diversity{
+#text-diversity {
   color: white;
   z-index: 1000;
 }
@@ -341,12 +378,12 @@ body, html {
 }
 
 .social-links a {
-  color: #E9C46A;
+  color: #e9c46a;
   font-size: 1.1rem;
   text-decoration: none;
 }
 
 .social-links a:hover {
-  color: #2A9D8F;
+  color: #2a9d8f;
   text-decoration: underline;
 }

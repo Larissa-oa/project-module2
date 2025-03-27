@@ -1,8 +1,7 @@
 .proverb-cube-container {
-  width: 100%;
-  max-width: 300px;
+  width: 300px;
   height: 300px;
-  margin: 0 auto;
+  margin: 0;
   padding: 20px;
   box-sizing: border-box;
   will-change: transform; /* Optimization for animations */

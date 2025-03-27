@@ -52,7 +52,7 @@ const SocialPage = ({ addEvent }) => {
 
         <div className="explore-events">
           <h2>Ready to Join?</h2>
-          <Link to="/allevents" className="explore-btn">
+          <Link to="/upcomingevents" className="explore-btn">
             Explore Open Events
           </Link>
         </div>
