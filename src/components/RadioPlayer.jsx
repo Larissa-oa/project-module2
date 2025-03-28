@@ -17,6 +17,12 @@ const RadioPlayer = () => {
   const searchRef = useRef(null);
   const audioRef = React.useRef(null);
 
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = volume;
+    }
+  }, []);
+
   // Server discovery and rotation functions (previous implementation)
   const getRadioBrowserBaseUrls = async () => {
     try {
@@ -170,8 +176,10 @@ const RadioPlayer = () => {
   return (
     <div className="radio-container">
       {/* Radio Player Default View */}
-      <div className="radio-default">
+      <div className="text-and-radio">
         <h2>World Radio</h2>
+      </div>
+      <div className="radio-default">
         <p className="station-info">
           🌍{" "}
           {selectedCountry

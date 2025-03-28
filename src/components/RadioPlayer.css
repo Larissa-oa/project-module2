@@ -14,16 +14,21 @@
   font-family: Arial, sans-serif;
 }
 
+.text-and-radio h2 {
+  color: white;
+}
+
 .radio-default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 240px;
+  margin-top: 250px;
 }
 
 .station-info {
   font-size: 20px; /* Increased font size */
   margin-bottom: 10px;
+  color: white;
 }
 
 .play-button,
