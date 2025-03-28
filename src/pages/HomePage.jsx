@@ -134,8 +134,6 @@ const HomePage = ({ upcomingEvents = [] }) => {
           >
             <div className="vide-overlay"></div>
           </div>
-
-          <ProverbCube />
      
           <div className="div5 radio-player-container">
             <div className="radio-text">
