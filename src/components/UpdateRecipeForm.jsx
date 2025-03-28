@@ -4,9 +4,17 @@ import axios from "axios";
 import { uploadToCloudinary } from "../utils/cloudinaryConfig";
 import "./UpdateRecipeForm.css";
 
-const UpdateRecipeForm = ({ onClose }) => {
-  const { recipeId } = useParams();
+const UpdateRecipeForm = ({
+  onClose,
+  initialRecipe = null,
+  onUpdateSuccess,
+}) => {
+  const routeParams = useParams();
   const navigate = useNavigate();
+
+  // Determine recipeId from either route params or initialRecipe
+  const recipeId = initialRecipe ? initialRecipe.id : routeParams.recipeId;
+
   const [formData, setFormData] = useState({
     name: "",
     image: "",
@@ -24,10 +32,17 @@ const UpdateRecipeForm = ({ onClose }) => {
   useEffect(() => {
     const fetchRecipe = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:4000/recipes/${recipeId}`
-        );
-        const recipeData = response.data;
+        let recipeData;
+
+        // Use initialRecipe if provided, otherwise fetch from API
+        if (initialRecipe) {
+          recipeData = initialRecipe;
+        } else {
+          const response = await axios.get(
+            `http://localhost:4000/recipes/${recipeId}`
+          );
+          recipeData = response.data;
+        }
 
         setFormData({
           name: recipeData.name,
@@ -48,7 +63,7 @@ const UpdateRecipeForm = ({ onClose }) => {
     };
 
     fetchRecipe();
-  }, [recipeId]);
+  }, [recipeId, initialRecipe]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -90,7 +105,6 @@ const UpdateRecipeForm = ({ onClose }) => {
     });
   };
 
-  // URL Image Preview Handler
   const handleUrlPreview = () => {
     if (formData.image) {
       setFormData((prev) => ({
@@ -101,7 +115,6 @@ const UpdateRecipeForm = ({ onClose }) => {
     }
   };
 
-  // Cloudinary image upload handler
   const handleImageUpload = async (event) => {
     const file = event.target.files[0];
     if (!file) return;
@@ -111,7 +124,6 @@ const UpdateRecipeForm = ({ onClose }) => {
     try {
       const uploadedImageUrl = await uploadToCloudinary(file);
 
-      // Update form data with Cloudinary image URL
       setFormData((prev) => ({
         ...prev,
         image: uploadedImageUrl,
@@ -128,7 +140,6 @@ const UpdateRecipeForm = ({ onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Filter out any empty ingredients or instructions
     const filteredIngredients = formData.ingredients.filter(
       (item) => item.trim() !== ""
     );
@@ -137,7 +148,6 @@ const UpdateRecipeForm = ({ onClose }) => {
       (item) => item.trim() !== ""
     );
 
-    // Create updated recipe object
     const updatedRecipe = {
       ...formData,
       ingredients: filteredIngredients,
@@ -145,14 +155,16 @@ const UpdateRecipeForm = ({ onClose }) => {
     };
 
     try {
-      // Send PATCH request to update the entire recipe
       const response = await axios.patch(
         `http://localhost:4000/recipes/${recipeId}`,
         updatedRecipe
       );
 
-      // Log the updated recipe
       console.log("Recipe updated:", response.data);
+
+      if (onUpdateSuccess) {
+        onUpdateSuccess();
+      }
 
       setSubmitStatus("success");
     } catch (error) {
@@ -162,7 +174,6 @@ const UpdateRecipeForm = ({ onClose }) => {
   };
 
   const handleBackgroundClick = (e) => {
-    // Close the popup if the background is clicked
     if (e.target === e.currentTarget) {
       onClose();
     }
@@ -194,7 +205,11 @@ const UpdateRecipeForm = ({ onClose }) => {
                 <button
                   onClick={() => {
                     onClose();
-                    navigate(`/recipes/${recipeId}`);
+                    if (onUpdateSuccess) {
+                      onUpdateSuccess();
+                    } else {
+                      navigate(`/recipes/${recipeId}`);
+                    }
                   }}
                   className="yes-button"
                 >
@@ -240,6 +255,7 @@ const UpdateRecipeForm = ({ onClose }) => {
         <div className="recipe-form-container">
           <h2>Update Recipe</h2>
           <form onSubmit={handleSubmit}>
+            {/* Rest of the form remains the same as in the previous implementation */}
             <div className="form-group">
               <label htmlFor="name">Recipe Name:</label>
               <input
@@ -252,6 +268,7 @@ const UpdateRecipeForm = ({ onClose }) => {
               />
             </div>
 
+            {/* Image upload section... */}
             <div className="form-group">
               <label>Image</label>
               <p>Enter a URL</p>

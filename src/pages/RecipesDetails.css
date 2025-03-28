@@ -138,3 +138,23 @@ a {
 .recipe-detail-page button:focus {
   outline: none;
 }
+
+.recipe-information-instructions h4 {
+  color: #005f73;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #94d2bd;
+  padding-bottom: 5px;
+}
+
+.recipe-information-instructions ul,
+.recipe-information-instructions ol {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.recipe-information-instructions li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
