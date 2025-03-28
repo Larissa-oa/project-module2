@@ -85,7 +85,7 @@ const HomePage = ({ upcomingEvents = [] }) => {
                 >
                   Add you own recipe!
                 </button>
-                <Link to="/recipespage">
+                <Link to="/recipes">
                   <button id="add-recipe-button">Check our recipe page</button>
                 </Link>
               </div>
