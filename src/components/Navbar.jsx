@@ -10,7 +10,10 @@ const Navbar = () => {
         <div className="navbar-brand">
           <img src={logo} alt="brand-logo" />
         </div>
-        <div className="brand-name-nav">CommUnity</div>
+        <div className="brand-name-nav">
+          <span className="nav-comm">Comm</span>
+          <span className="nav-unity">Unity</span>
+        </div>
         <div className="navbar-links">
           <NavLink to="/" className="nav-link">
             Home

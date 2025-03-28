@@ -11,6 +11,7 @@ import RecipeCardsCarousel from "../components/RecipeCardsCarousel";
 import homepagevideo from "../images/homepage.mp4";
 import multicultural from "../images/multicultural.jpg.avif";
 import flags from "../images/flag.png";
+import EventSlider from "../components/EventSlider";
 
 const HomePage = ({ upcomingEvents = [] }) => {
   const [isRecipeFormOpen, setIsRecipeFormOpen] = useState(false);
@@ -26,7 +27,8 @@ const HomePage = ({ upcomingEvents = [] }) => {
           <div className="video-overlay"></div>
           <div className="video-content">
             <h1 className="homepage-title">
-              Comm<span classNAme="unity">Unity</span>
+              <span className="comm">Comm</span>
+              <span className="unity">Unity</span>
             </h1>
             <div className="welcome">
               <Welcome />
@@ -141,6 +143,7 @@ const HomePage = ({ upcomingEvents = [] }) => {
           </div>
 
           {/* Social Links */}
+          <EventSlider upcomingEvents={upcomingEvents} />
           <div className="div6 social-links">
             <div className="links-container">
               <Link to="/socialpage" className="social-page-link">

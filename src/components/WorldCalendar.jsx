@@ -83,7 +83,7 @@ const WorldCalendar = () => {
       }
 
       const data = await response.json();
-      
+
       const sortedCountries = data.sort((a, b) => a.name.localeCompare(b.name));
 
       const countryCodeMap = {};
@@ -212,10 +212,9 @@ const WorldCalendar = () => {
   return (
     <>
       <div className="world-calendar-container">
-
         {/* Weekly Calendar */}
         <div className="weekly-calendar">
-          <h2>The Wold Calendar</h2>
+          <h2>The World Calendar</h2>
           <div className="weekly-holidays-scrollable">
             {loading && weeklyHolidays.length === 0 ? (
               <div className="loading">Loading weekly holidays...</div>

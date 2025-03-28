@@ -34,11 +34,21 @@ body {
 
 .brand-name-nav {
   font-size: 28px;
-  font-weight: bold;
-  color: #f9a826;
+  font-weight: 800;
+  text-transform: none;
+  text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.7);
   letter-spacing: 2px;
   margin-left: 20px;
   transition: all 0.3s ease;
+  font-family: "Overpass", sans-serif;
+}
+
+.nav-comm {
+  color: aqua;
+}
+
+.nav-unity {
+  color: white;
 }
 
 .navbar-links {
