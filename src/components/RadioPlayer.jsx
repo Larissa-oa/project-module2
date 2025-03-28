@@ -27,7 +27,7 @@ const RadioPlayer = () => {
   const getRadioBrowserBaseUrls = async () => {
     try {
       const response = await fetch(
-        "http://all.api.radio-browser.info/json/servers"
+        "https://all.api.radio-browser.info/json/servers"
       );
       const servers = await response.json();
       return servers.map((x) => `https://${x.name}`);
