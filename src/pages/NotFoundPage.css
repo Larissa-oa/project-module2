@@ -1,0 +1,83 @@
+.not-found-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    font-family: "Arial", sans-serif;
+    padding: 20px;
+  }
+  
+  .not-found-container {
+    text-align: center;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 800px;
+    width: 100%;
+    transition: transform 0.3s ease;
+  }
+  
+  .not-found-container:hover {
+    transform: scale(1.02);
+  }
+  
+  .not-found-image {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .not-found-title {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+  
+  .not-found-text {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+  }
+  
+  .home-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+  
+  .home-button:hover {
+    background-color: white;
+    color: #007bff;
+    border-color: #007bff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 600px) {
+    .not-found-container {
+      padding: 20px;
+      margin: 0 15px;
+    }
+  
+    .not-found-title {
+      font-size: 2rem;
+    }
+  
+    .not-found-text {
+      font-size: 1rem;
+    }
+  }
+  

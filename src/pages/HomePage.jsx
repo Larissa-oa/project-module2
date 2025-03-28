@@ -8,7 +8,7 @@ import WorldCalendar from "../components/WorldCalendar";
 import Welcome from "../components/Welcome";
 import RecipeForm from "../components/RecipeForm";
 import RecipeCardsCarousel from "../components/RecipeCardsCarousel";
-import homepagevideo from "../images/homepage.mp4";
+import homepagevideo from "../images/homepage-video.mp4";
 import multicultural from "../images/multicultural.jpg.avif";
 import flags from "../images/flag.png";
 import EventSlider from "../components/EventSlider";
@@ -19,24 +19,15 @@ const HomePage = ({ upcomingEvents = [] }) => {
   return (
     <>
       <main className="homepage">
-        <div className="video-section">
-          <video className="homepage-video" autoPlay loop muted>
-            <source src={homepagevideo} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <div className="video-overlay"></div>
-          <div className="video-content">
-            <h1 className="homepage-title">
-              <span className="comm">Comm</span>
+  
+
+        <div className="homepage-web-intro">
+        <h1 className="homepage-title">
+              Comm
               <span className="unity">Unity</span>
             </h1>
             <div className="welcome">
               <Welcome />
-            </div>
-          </div>
-        </div>
-
-        <div className="homepage-web-intro">
           <p>
             Welcome to <b>CommUnity</b> – Here you can explore a collection of
             recipes that anyone can personalize to their taste, discover
@@ -48,24 +39,41 @@ const HomePage = ({ upcomingEvents = [] }) => {
           </p>
           <hr />
         </div>
+        </div>
 
         {/* Content Section */}
         <div className="content">
           {/* Featured Section with Background Image */}
-          <div
-            className="div1 featured-section"
+          <div className="div1 featured-section"
             style={{
               backgroundImage: "url('/images/featured-background.jpg')",
             }}
           >
-            <div className="text-content">
-              <h2>Explore the World</h2>
-              <p>
-                From recipes to customs, and the latest news, dive deep into
-                cultures around the world.
-              </p>
-            </div>
-          </div>
+            <div className="video-section">
+  <video className="homepage-video" autoPlay loop muted>
+    <source src={homepagevideo} type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  
+  <div className="video-content">
+    <h2>Explore the World</h2>
+  </div>
+</div>
+
+          {/* Social Links */}
+<div className="div6 social-links">
+  <div className="links-container">
+    <p className="social-text">Stay updated on upcoming events and share with your friends!</p>
+    <Link to="/socialpage" className="social-page-link">
+      <p className="p-btn">Social Page</p>
+    </Link>
+    <Link to="/upcomingevents" className="all-events-link">
+      <p className="p-btn">Upcoming Events Page</p>
+    </Link>
+  </div>
+  <EventSlider upcomingEvents={upcomingEvents} />
+</div>
+
 
           {/* Recipe Section */}
           <div className="div2 recipe-section">
@@ -116,7 +124,7 @@ const HomePage = ({ upcomingEvents = [] }) => {
             <img className="flags-img" src={flags} />
           </div>
 
-          {/* Customs and Proverbs Section with Background */}
+          
           <div
             className="div4 customs-and-proverbs"
             style={{
@@ -128,7 +136,7 @@ const HomePage = ({ upcomingEvents = [] }) => {
           </div>
 
           <ProverbCube />
-          {/* Radio Player Section */}
+     
           <div className="div5 radio-player-container">
             <div className="radio-text">
               <h3>Tune In</h3>
@@ -141,19 +149,7 @@ const HomePage = ({ upcomingEvents = [] }) => {
             </div>
             <RadioPlayer />
           </div>
-
-          {/* Social Links */}
-          <EventSlider upcomingEvents={upcomingEvents} />
-          <div className="div6 social-links">
-            <div className="links-container">
-              <Link to="/socialpage" className="social-page-link">
-                Social Page
-              </Link>
-              <Link to="/upcomingevents" className="all-events-link">
-                Upcoming Events Page
-              </Link>
-            </div>
-          </div>
+        </div>
         </div>
       </main>
     </>

@@ -15,30 +15,6 @@ html {
   align-items: center;
 }
 
-/* Video Section */
-.video-section {
-  margin-top: -100px;
-  position: relative;
-  width: 100%;
-  height: 30vw;
-  overflow: hidden;
-}
-
-.homepage-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* .video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 5;
-} */
 
 .video-content {
   position: absolute;
@@ -60,7 +36,7 @@ html {
 }
 
 .comm {
-  color: aqua;
+  color: rgb(20, 93, 93);
 }
 
 .unity {
@@ -251,7 +227,7 @@ html {
 
 @media (max-width: 1024px) {
   .div2.recipe-section {
-    padding-right: 40px; /* Less padding for tablets */
+    padding-right: 40px; 
   }
 
   .recipe-intro-text {
@@ -464,21 +440,238 @@ p {
   text-align: center;
 }
 
-/* Social Links */
-.social-links {
+/* General container for social links */
+.div6.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(135deg, #555, #2a9d8f); 
+  padding: 30px 20px;/* Updated Gradient */
+  width: 100%; 
+  max-height: 400px;/* Full width container */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.4); 
+  margin-bottom: -40px;/* Translucent background */
+}
+
+/* On hover, slightly increase the box shadow */
+.div6.social-links:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Inner links container - make it display buttons side by side */
+.links-container {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-top: 20px;
+  text-align: center;
+  width: 100%; /* Full width */
+  background-color: rgba(211, 211, 211, 0.2); /* Very light grey, translucent */
+  padding: 15px;
+  border-radius: 8px; /* Slight rounded corners for the button container */
 }
 
-.social-links a {
-  color: #e9c46a;
-  font-size: 1.1rem;
+/* Paragraph below social links */
+.social-text {
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+/* Buttons styling */
+.social-page-link,
+.all-events-link {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
   text-decoration: none;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #555, #2a9d8f); /* Match button gradient */
+  border: none;
+  border-radius: 50px;
+  border: 1px solid white;
+  transition: all 0.3s ease;
 }
 
-.social-links a:hover {
-  color: #2a9d8f;
-  text-decoration: underline;
+/* Hover effect on the links */
+.social-page-link:hover,
+.all-events-link:hover {
+  background: linear-gradient(135deg, #2a9d8f, #555); /* Reverse the gradient */
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.p-btn{
+text-align:center;
+margin-top: 5px;
+color: white;
+font-weight: bold;
+}
+
+.events-slider{
+  margin-top: 30px;
+}
+/* Make links more responsive on small screens */
+@media (max-width: 768px) {
+  .div6.social-links {
+    padding: 20px;
+  }
+  
+  .social-text {
+    font-size: 14px;
+  }
+
+  .social-page-link,
+  .all-events-link {
+    font-size: 16px;
+    padding: 10px 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-text {
+    font-size: 12px;
+  }
+
+  .social-page-link,
+  .all-events-link {
+    font-size: 14px;
+    padding: 8px 18px;
+  }
+}
+
+.video-section {
+  position: relative;
+  width: 100%;
+  height: 60vh; 
+  overflow: hidden;
+  margin: 0; 
+  padding: 0;
+}
+
+.homepage-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the video covers the container */
+}
+
+
+
+.video-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the text */
+  text-align: center;
+  color: #fff; /* White text color */
+  z-index: 2; /* Ensure text is above overlay */
+  max-width: 100%; /* Limit width for larger screens */
+}
+
+.video-content h2 {
+  font-size: 3rem; /* Big text for the heading */
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Text shadow for readability */
+}
+
+.video-content p {
+  font-size: 1.25rem; /* Smaller text for the description */
+  line-height: 1.5;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow on the paragraph */
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .video-content h2 {
+    font-size: 2rem; /* Smaller heading on mobile */
+  }
+
+  .video-content p {
+    font-size: 1rem; /* Adjust description font size */
+  }
+}
+
+/* Homepage Web Intro Styling */
+.homepage-web-intro {
+  width: 100%;
+  background-color: #fff; /* Light background for the intro section */
+  padding: 50px 20px; /* Add padding around the content */
+  text-align: center; /* Center-align text inside the section */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+  margin-bottom: -150px;/* Soft shadow around the section */
+ /* Space below the intro section */
+}
+
+/* Title Styling */
+.homepage-title {
+  font-size: 3rem;
+  font-family: 'Boldonse';
+  font-weight: bold;
+  color: #8b8b8b;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+ 
+  line-height: 1.2;
+}
+
+/* Color for each span */
+.homepage-title .comm {
+  color: #717070; /* Tomato Red */
+}
+
+.homepage-title .unity {
+  color: #35567d; /* Sea Green */
+}
+
+/* Welcome Section */
+.welcome {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #414141;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Welcome Paragraph */
+.welcome p {
+  margin-top: 20px;
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  text-align: center;
+  font-weight: 300;
+}
+
+/* Optional Horizontal Line Styling */
+.welcome hr {
+  border: 1px solid #ddd;
+  margin-top: 30px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Add Responsive Design */
+@media screen and (max-width: 768px) {
+  .homepage-title {
+    font-size: 2.5rem;
+  }
+  
+  .welcome {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .welcome p {
+    font-size: 1rem;
+  }
 }
