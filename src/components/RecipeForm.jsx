@@ -136,7 +136,7 @@ const RecipeForm = ({ onClose }) => {
     try {
       // Send POST request to the backend
       const response = await axios.post(
-        "http://localhost:4000/recipes",
+        `${API_URL}/recipes`,
         newRecipe
       );
 

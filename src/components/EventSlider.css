@@ -1,121 +1,157 @@
+/* EventSlider.css */
 .event-slider {
-  position: relative;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   height: 300px;
-  overflow: hidden;
-  margin-top: 20px;
-  /* Adding some margin to separate from top elements */
+  padding: 40px 20px;
+  height: 500px; /* Ensure the container has a height */
+  position: relative;
 }
 
-.event-slider .swiper {
-  width: 100%;
-  height: 100%;
+.swiper {
+  height: 100%; /* Ensure swiper takes the full height of the container */
 }
 
 .slider-slide {
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
-  width: 100%;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow: hidden;
   height: 100%;
+  height: 300px;
 }
 
-.slider-slide.no-events {
-  width: 100%;
-  height: 100%;
+.no-events {
+  text-align: center;
+  color: #555;
 }
 
 .no-events-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.slider-content {
-  display: flex;
-  width: 90%;
-  max-width: 1200px;
-  height: 400px;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Added a larger shadow for depth */
-  border-radius: 20px; /* Increased border-radius for a softer look */
-  overflow: hidden;
-  margin: 0 auto; /* Centering the slider content */
-  padding: 10px; 
-  border-radius: 10px;/* Added padding to provide some space around the content */
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
 }
 
 .slider-image-container {
-  width: 30%;
-  padding: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 15px; /* Added rounded corners for the image container */
+  position: relative;
+  width: 100%;
+  max-height: 250px;
+  overflow: hidden;
+  border-radius: 8px;
+  height: 300px;
 }
 
 .slider-image {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Added shadow to the image for depth */
+  transition: transform 0.3s ease;
+}
+
+.slider-image-container:hover .slider-image {
+  transform: scale(1.1);
 }
 
 .slider-text-container {
-  width: 70%;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-radius: 15px; /* Rounded corners for the text container */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added a subtle shadow around the text area */
+  padding: 20px;
+  text-align: center;
 }
 
-.slider-text-container h2 {
-  margin-bottom: 20px;
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
   color: #333;
-  font-size: 2rem;
 }
 
 .slider-description {
+  font-size: 16px;
+  color: #777;
   margin-bottom: 20px;
-  color: #666;
 }
 
 .event-details {
-  background-color: #f4f4f4;
-  padding: 20px;
-  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .event-detail-item {
-  margin-bottom: 10px;
-  color: #444;
+  font-size: 14px;
+  color: #333;
+  font-weight: 400;
 }
 
 .event-detail-item strong {
-  margin-right: 10px;
-  color: #333;
+  font-weight: 600;
+  color: #000;
 }
 
 .event-detail-item a {
-  color: #007bff;
+  color: #1a73e8;
   text-decoration: none;
+  font-weight: 600;
+}
+
+.event-detail-item a:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
-  .slider-content {
-    flex-direction: column;
+  .slider-slide {
     height: auto;
-  }
-
-  .slider-image-container,
-  .slider-text-container {
-    width: 100%;
+    padding: 20px 15px;
   }
 
   .slider-image-container {
-    height: 300px;
+    max-height: 200px;
+  }
+
+  .slider-text-container {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .slider-description {
+    font-size: 14px;
+  }
+
+  .event-detail-item {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-slide {
+    padding: 15px 10px;
+  }
+
+  .slider-image-container {
+    max-height: 150px;
+  }
+
+  .slider-text-container {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .slider-description {
+    font-size: 12px;
+  }
+
+  .event-detail-item {
+    font-size: 10px;
   }
 }

@@ -156,7 +156,7 @@ const UpdateRecipeForm = ({
 
     try {
       const response = await axios.patch(
-        `http://localhost:4000/recipes/${recipeId}`,
+        `${API_URL}/recipes/${recipeId}`,
         updatedRecipe
       );
 

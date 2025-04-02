@@ -600,6 +600,9 @@ font-weight: bold;
 
 /* Homepage Web Intro Styling */
 .homepage-web-intro {
+  background-image: url('https://img.freepik.com/free-vector/worldwide-connection-gray-background-illustration-vector_53876-61772.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 100%;
   background-color: #fff; /* Light background for the intro section */
   padding: 50px 20px; /* Add padding around the content */
