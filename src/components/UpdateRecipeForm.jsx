@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { uploadToCloudinary } from "../utils/cloudinaryConfig";
 import "./UpdateRecipeForm.css";
+import { API_URL } from "./config/config.js";
 
 const UpdateRecipeForm = ({
   onClose,

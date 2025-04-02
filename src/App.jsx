@@ -229,7 +229,9 @@ function App() {
 
         <Route
           path="/recipes/:recipeId"
-          element={<RecipesDetails handleDelete={handleDelete} />}
+          element={<RecipesDetails 
+            handleDelete={handleDelete} 
+            />}
         />
       </Routes>
       <Footer />
