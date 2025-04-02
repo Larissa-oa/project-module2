@@ -39,7 +39,7 @@ const UpdateRecipeForm = ({
           recipeData = initialRecipe;
         } else {
           const response = await axios.get(
-            `http://localhost:4000/recipes/${recipeId}`
+            `${API_URL}/recipes/${recipeId}`
           );
           recipeData = response.data;
         }
